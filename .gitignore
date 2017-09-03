@@ -1,0 +1,5 @@
+**/derived/*.[ch]
+__pycache__/
+*.arxml
+*.pyc
+*.komodoproject
