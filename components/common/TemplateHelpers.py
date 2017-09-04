@@ -31,14 +31,19 @@ def createConstantTemplateFromPhysicalType(name, dataTypeTemplate):
    return type(name, (autosar.Template,), dict(dataTypeTemplate=dataTypeTemplate, apply=apply))
 
 #PortInterfaces
-def createSenderReceiverInterfaceTemplate(name, dataTypeTemplate):
+def createSenderReceiverInterfaceTemplate(name, dataTypeTemplate, dataElementName = None):
+   if dataElementName is None:
+      dataElementName = name
+   if dataElementName[-2:]=='_I':
+      dataElementName=dataElementName[:-2]
+      
    @classmethod
    def apply(cls, ws):
       package = ws.getPortInterfacePackage()
       if package.find(name) is None:
          ws.apply(cls.dataTypeTemplate)
-         package.createSenderReceiverInterface(name, autosar.DataElement(name, cls.dataTypeTemplate.__name__))
-   return type(name, (autosar.Template,), dict(dataTypeTemplate=dataTypeTemplate, apply=apply))
+         package.createSenderReceiverInterface(name, autosar.DataElement(cls.dataElementName, cls.dataTypeTemplate.__name__))
+   return type(name, (autosar.Template,), dict(dataTypeTemplate=dataTypeTemplate, apply=apply, dataElementName=dataElementName))
 
 #Ports
 def _createProvidePortHelper(swc, name, portInterfaceTemplate, initValueTemplate=None):
