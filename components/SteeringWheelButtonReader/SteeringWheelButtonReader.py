@@ -5,6 +5,7 @@ import autosar
 import PortInterfaces
 import Signals
 import Services
+import Modes
 
 class SteeringWheelButtonReader(autosar.Template):
    @classmethod
@@ -19,6 +20,7 @@ class SteeringWheelButtonReader(autosar.Template):
    @classmethod
    def addPorts(cls, swc):
       componentName = cls.__name__
+      swc.apply(Modes.EcuM_CurrentMode.Require)
       swc.apply(Signals.SWS_PushButtonStatus_Back.Send)
       swc.apply(Signals.SWS_PushButtonStatus_Down.Send)
       swc.apply(Signals.SWS_PushButtonStatus_Enter.Send)
@@ -31,10 +33,17 @@ class SteeringWheelButtonReader(autosar.Template):
    @classmethod
    def addBehavior(cls, swc):
       componentName = cls.__name__
+      accessIgnoreList=[]
+      ws = swc.rootWS()
+      for port in swc.requirePorts+swc.providePorts:
+         portInterface = ws.find(port.portInterfaceRef)
+         if not isinstance(portInterface, autosar.portinterface.SenderReceiverInterface) or len(portInterface.dataElements)==0:
+            accessIgnoreList.append(port.name)
       swc.behavior.createRunnable(componentName+'_Init', portAccess=[x.name for x in swc.providePorts])
       swc.behavior.createRunnable(componentName+'_Exit', portAccess=[x.name for x in swc.providePorts])
-      swc.behavior.createRunnable(componentName+'_Run', portAccess=[x.name for x in swc.requirePorts+swc.providePorts if x.name != 'BspApi']+['BspApi/GetDigitalInput'])
+      swc.behavior.createRunnable(componentName+'_Run', portAccess=[x.name for x in swc.requirePorts+swc.providePorts if x.name not in accessIgnoreList] + ['BspApi/GetDiscreteInput'])
       swc.behavior.createTimerEvent(componentName+'_Run', 10)
+      swc.behavior.createModeSwitchEvent(componentName+'_Init', 'EcuM_CurrentMode/RUN')
 
 if __name__ == '__main__':
    ws = autosar.workspace()

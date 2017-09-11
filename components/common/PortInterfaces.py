@@ -17,14 +17,14 @@ class BspApi_I(autosar.Template):
       if package.find(cls.__name__) is None:
          ws.apply(DataTypes.BspApi_DigitalId_T)
          ws.apply(DataTypes.BspApi_DigitalState_T)
-         operationsList = ['GetDigitalInput', 'SetDigitalOutput']
+         operationsList = ['GetDiscreteInput', 'SetDiscreteOutput']
          portInterface=package.createClientServerInterface(cls.__name__,
                                                            operationsList,
                                                            autosar.ApplicationError("E_NOT_OK", 1),
                                                            isService=True)
-         portInterface["GetDigitalInput"].createInArgument("inputId", "BspApi_DigitalId_T")
-         portInterface["GetDigitalInput"].createOutArgument("inputValue", "BspApi_DigitalState_T")
-         portInterface["SetDigitalOutput"].possibleErrors = "E_NOT_OK"
-         portInterface['SetDigitalOutput'].createInArgument("outputId", "BspApi_DigitalId_T")
-         portInterface['SetDigitalOutput'].createInArgument("outputValue", "BspApi_DigitalState_T")
+         portInterface["GetDiscreteInput"].createInArgument("inputId", "BspApi_DigitalId_T")
+         portInterface["GetDiscreteInput"].createOutArgument("inputValue", "BspApi_DigitalState_T")
+         portInterface["SetDiscreteOutput"].possibleErrors = "E_NOT_OK"
+         portInterface['SetDiscreteOutput'].createInArgument("outputId", "BspApi_DigitalId_T")
+         portInterface['SetDiscreteOutput'].createInArgument("outputValue", "BspApi_DigitalState_T")
          

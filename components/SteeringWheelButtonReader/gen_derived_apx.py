@@ -20,13 +20,11 @@ ws.apply(BspService)
 partition = autosar.rte.Partition()
 partition.addComponent(ws.find('/ComponentType/SteeringWheelButtonReader'))
 partition.addComponent(ws.find('/ComponentType/BspService'))
-swc1 = ws.find('/ComponentType/SteeringWheelButtonReader')
-swc2 = ws.find('/ComponentType/BspService')
-for port in swc1.requirePorts:
-   print(port.name)
-print('BspService:')
-for port in swc2.providePorts:
-   print(port.name)
+partition.autoConnect()
+print(len(partition.assemblyConnectors))
+for connector in partition.assemblyConnectors:
+   print("%s/%s => %s/%s"%(connector.provide.component.name, connector.provide.port.name, connector.require.component.name, connector.require.port.name))
+
 
 
 rte_config = autosar.rte.Config(partition)

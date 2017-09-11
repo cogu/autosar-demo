@@ -32,10 +32,10 @@ class BspService(autosar.Template):
    @classmethod
    def addServerRunnables(cls, swc):
       componentName = cls.__name__      
-      swc.behavior.createRunnable(componentName+'_GetDigitalInput', concurrent=True)
-      swc.behavior.createRunnable(componentName+'_SetDigitalOutput', concurrent=True)
-      swc.behavior.createOperationInvokedEvent(componentName+'_GetDigitalInput', 'BspApi/GetDigitalInput')
-      swc.behavior.createOperationInvokedEvent(componentName+'_SetDigitalOutput', 'BspApi/SetDigitalOutput')
+      swc.behavior.createRunnable(componentName+'_GetDiscreteInput', concurrent=True)
+      swc.behavior.createRunnable(componentName+'_SetDiscreteOutput', concurrent=True)
+      swc.behavior.createOperationInvokedEvent(componentName+'_GetDiscreteInput', 'BspApi/GetDiscreteInput')
+      swc.behavior.createOperationInvokedEvent(componentName+'_SetDiscreteOutput', 'BspApi/SetDiscreteOutput')
 
 if __name__ == '__main__':
    ws = autosar.workspace()
