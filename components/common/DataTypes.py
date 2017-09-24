@@ -1,6 +1,6 @@
 import sys
 import autosar
-from TemplateHelpers import createEnumerationDataTypeTemplate
+from TemplateFactory import createEnumerationDataTypeTemplate
 
       
 #### Enumeration Data Types ####
@@ -21,6 +21,17 @@ valueTable=['BspApi_DigitalState_Inactive',
             'BspApi_DigitalState_Error',
             'BspApi_DigitalState_NotAvailable']
 BspApi_DigitalState_T = createEnumerationDataTypeTemplate('BspApi_DigitalState_T', valueTable)
+
+valueTable=['VehicleModeInternal_Off',
+            'VehicleModeInternal_Accessory',
+            'VehicleModeInternal_Run',
+            'VehicleModeInternal_Crank',
+            'VehicleModeInternal_Spare1',
+            'VehicleModeInternal_Spare2',
+            'VehicleModeInternal_Error',
+            'VehicleModeInternal_NotAvailable',]
+VehicleModeInternal_T = createEnumerationDataTypeTemplate('VehicleModeInternal_T', valueTable)
+
 
 #### Physical Data Types ####
 class Percent_T(autosar.Template):

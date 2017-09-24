@@ -2,13 +2,14 @@ import sys
 sys.path.insert(0,'..')
 import autosar
 import DataTypes
-from TemplateHelpers import createSenderReceiverInterfaceTemplate
+from TemplateFactory import createSenderReceiverInterfaceTemplate
 
 #### Sender Receiver Port Interfaces ####
 ButtonStatus_I = createSenderReceiverInterfaceTemplate('ButtonStatus_I', DataTypes.ButtonStatus_T)
 RtcSeconds_I = createSenderReceiverInterfaceTemplate('RtcSeconds_I', DataTypes.Seconds_T)
 RtcMinutes_I = createSenderReceiverInterfaceTemplate('RtcMinutes_I', DataTypes.Minutes_T)
 RtcHours_I = createSenderReceiverInterfaceTemplate('RtcHours_I', DataTypes.Hours_T)
+VehicleModeInternal_I = createSenderReceiverInterfaceTemplate('VehicleModeInternal_I', DataTypes.VehicleModeInternal_T)
 
 class BspApi_I(autosar.Template):
    @classmethod

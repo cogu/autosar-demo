@@ -2,7 +2,7 @@ import sys
 import autosar
 import PortInterfaces
 import Constants
-from TemplateHelpers import createSenderReceiverPortTemplate
+from TemplateFactory import createSenderReceiverPortTemplate
 
 RtcSeconds = createSenderReceiverPortTemplate('RtcSeconds', PortInterfaces.RtcSeconds_I, Constants.RtcSeconds_IV)
 RtcMinutes = createSenderReceiverPortTemplate('RtcMinutes', PortInterfaces.RtcMinutes_I, Constants.RtcMinutes_IV)
@@ -14,4 +14,5 @@ SWS_PushButtonStatus_Right = createSenderReceiverPortTemplate('SWS_PushButtonSta
 SWS_PushButtonStatus_Enter = createSenderReceiverPortTemplate('SWS_PushButtonStatus_Enter', PortInterfaces.ButtonStatus_I, Constants.ButtonStatus_IV)
 SWS_PushButtonStatus_Back = createSenderReceiverPortTemplate('SWS_PushButtonStatus_Back', PortInterfaces.ButtonStatus_I, Constants.ButtonStatus_IV)
 SWS_PushButtonStatus_Home = createSenderReceiverPortTemplate('SWS_PushButtonStatus_Home', PortInterfaces.ButtonStatus_I, Constants.ButtonStatus_IV)
+VehicleModeInternal = createSenderReceiverPortTemplate('VehicleModeInternal', PortInterfaces.VehicleModeInternal_I, Constants.VehicleModeInternal_IV)
 

@@ -28,6 +28,7 @@ class SteeringWheelButtonReader(autosar.Template):
       swc.apply(Signals.SWS_PushButtonStatus_Left.Send)
       swc.apply(Signals.SWS_PushButtonStatus_Right.Send)
       swc.apply(Signals.SWS_PushButtonStatus_Up.Send)
+      swc.apply(Signals.VehicleModeInternal.Receive)
       swc.apply(Services.BspApi.Call)
    
    @classmethod
