@@ -29,12 +29,11 @@ for port in swc2.providePorts:
    print(port.name)
 
 
-rte_config = autosar.rte.Config(partition)
-#typeGenerator = autosar.rte.TypeGenerator(partition)
-#typeGenerator.generate(derived_dir+'/Rte_Type.h')
-#headerGenerator = autosar.rte.ComponentHeaderGenerator(partition)
-#headerGenerator.generate(derived_dir)
-#rteGenerator = autosar.rte.RteGenerator(partition)
-#rteGenerator.generate(derived_dir)
+typeGenerator = autosar.rte.TypeGenerator(partition)
+typeGenerator.generate(derived_dir+'/Rte_Type.h')
+headerGenerator = autosar.rte.ComponentHeaderGenerator(partition)
+headerGenerator.generate(derived_dir)
+rteGenerator = autosar.rte.RteGenerator(autosar.rte.Config(partition))
+rteGenerator.generate(derived_dir)
 delta=float(time.time()-start)*1000
 print('%dms'%(round(delta)))

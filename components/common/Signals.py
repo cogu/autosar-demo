@@ -4,9 +4,8 @@ import PortInterfaces
 import Constants
 from TemplateFactory import createSenderReceiverPortTemplate
 
-RtcSeconds = createSenderReceiverPortTemplate('RtcSeconds', PortInterfaces.RtcSeconds_I, Constants.RtcSeconds_IV)
-RtcMinutes = createSenderReceiverPortTemplate('RtcMinutes', PortInterfaces.RtcMinutes_I, Constants.RtcMinutes_IV)
-RtcHours = createSenderReceiverPortTemplate('RtcHours', PortInterfaces.RtcHours_I, Constants.RtcHours_IV)
+SystemTime = createSenderReceiverPortTemplate('SystemTime', PortInterfaces.SystemTime_I, Constants.SystemTime_IV)
+SystemDate = createSenderReceiverPortTemplate('SystemDate', PortInterfaces.SystemDate_I, Constants.SystemDate_IV)
 SWS_PushButtonStatus_Up = createSenderReceiverPortTemplate('SWS_PushButtonStatus_Up', PortInterfaces.ButtonStatus_I, Constants.ButtonStatus_IV)
 SWS_PushButtonStatus_Down = createSenderReceiverPortTemplate('SWS_PushButtonStatus_Down', PortInterfaces.ButtonStatus_I, Constants.ButtonStatus_IV)
 SWS_PushButtonStatus_Left = createSenderReceiverPortTemplate('SWS_PushButtonStatus_Left', PortInterfaces.ButtonStatus_I, Constants.ButtonStatus_IV)
