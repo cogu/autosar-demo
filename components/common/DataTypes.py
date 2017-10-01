@@ -16,11 +16,11 @@ valueTable=['ButtonStatus_Released',
             'ButtonStatus_NotAvailable']
 ButtonStatus_T = createEnumerationDataTypeTemplate('ButtonStatus_T', valueTable)
 
-valueTable=['BspApi_DigitalState_Inactive',
-            'BspApi_DigitalState_Active',
-            'BspApi_DigitalState_Error',
-            'BspApi_DigitalState_NotAvailable']
-BspApi_DigitalState_T = createEnumerationDataTypeTemplate('BspApi_DigitalState_T', valueTable)
+valueTable=['BspApi_DiscreteState_Inactive',
+            'BspApi_DiscreteState_Active',
+            'BspApi_DiscreteState_Error',
+            'BspApi_DiscreteState_NotAvailable']
+BspApi_DiscreteState_T = createEnumerationDataTypeTemplate('BspApi_DiscreteState_T', valueTable)
 
 valueTable=['VehicleModeInternal_Off',
             'VehicleModeInternal_Accessory',
@@ -175,7 +175,7 @@ class DistanceHiRes_T(autosar.Template):
       if package.find(cls.__name__) is None:
          package.createIntegerDataType(cls.__name__, min=cls.minValue, max=cls.maxValue, offset=cls.offset, scaling=cls.scaling, unit=cls.unit)
 
-class BspApi_DigitalId_T(autosar.Template):
+class BspApi_DiscreteId_T(autosar.Template):
    minValue=0
    maxValue=255
    offset=0

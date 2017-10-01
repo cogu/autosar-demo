@@ -25,6 +25,11 @@
 	</natures>
 	<linkedResources>
 		<link>
+			<name>cutest</name>
+			<type>2</type>
+			<location>C:/Users/cogu/repo/autosar-demo/c-apx/cutest</location>
+		</link>
+		<link>
 			<name>derived</name>
 			<type>2</type>
 			<location>C:/Users/cogu/repo/autosar-demo/components/SteeringWheelButtonReader/derived</location>
@@ -38,6 +43,11 @@
 			<name>test</name>
 			<type>2</type>
 			<location>C:/Users/cogu/repo/autosar-demo/components/SteeringWheelButtonReader/test</location>
+		</link>
+		<link>
+			<name>common/inc</name>
+			<type>2</type>
+			<location>C:/Users/cogu/repo/autosar-demo/components/common/inc</location>
 		</link>
 	</linkedResources>
 </projectDescription>

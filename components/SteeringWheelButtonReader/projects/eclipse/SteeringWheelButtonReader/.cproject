@@ -32,8 +32,10 @@
 								<option id="gnu.c.compiler.cygwin.exe.debug.option.debugging.level.1503992801" name="Debug Level" superClass="gnu.c.compiler.cygwin.exe.debug.option.debugging.level" value="gnu.c.debugging.level.max" valueType="enumerated"/>
 								<option id="gnu.c.compiler.option.include.paths.1445450609" name="Include paths (-I)" superClass="gnu.c.compiler.option.include.paths" valueType="includePath">
 									<listOptionValue builtIn="false" value="../../../../../../c-apx/autosar/inc"/>
+									<listOptionValue builtIn="false" value="../../../../../../c-apx/cutest/inc"/>
 									<listOptionValue builtIn="false" value="../../../../../../c-apx/cutest"/>
 									<listOptionValue builtIn="false" value="../../../../derived"/>
+									<listOptionValue builtIn="false" value="../../../../../common/inc"/>
 								</option>
 								<inputType id="cdt.managedbuild.tool.gnu.c.compiler.input.cygwin.113035608" superClass="cdt.managedbuild.tool.gnu.c.compiler.input.cygwin"/>
 							</tool>
@@ -128,4 +130,5 @@
 			</target>
 		</buildTargets>
 	</storageModule>
+	<storageModule moduleId="refreshScope"/>
 </cproject>

@@ -1,8 +1,8 @@
 /*****************************************************************************
-* \file      SteeringWheelButtonReader.c
+* \file      BspServiceTypes.h
 * \author    Conny Gustafsson
-* \date      2017-09-04
-* \brief     SteeringWheelButtonReader
+* \date      2017-10-01
+* \brief     BSP Types and IDs
 *
 * Copyright (c) 2017 Conny Gustafsson
 * Permission is hereby granted, free of charge, to any person obtaining a copy of
@@ -23,57 +23,26 @@
 * CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 *
 ******************************************************************************/
+#ifndef BSP_SERVICE_TYPES_H
+#define BSP_SERVICE_TYPES_H
+
 //////////////////////////////////////////////////////////////////////////////
 // INCLUDES
 //////////////////////////////////////////////////////////////////////////////
-#include "Rte_SteeringWheelButtonReader.h"
-#include "bsp_defs.h"
+#include "Rte_Type.h"
 
 //////////////////////////////////////////////////////////////////////////////
-// PRIVATE CONSTANTS AND DATA TYPES
+// PUBLIC CONSTANTS AND DATA TYPES
 //////////////////////////////////////////////////////////////////////////////
-
-//////////////////////////////////////////////////////////////////////////////
-// PRIVATE FUNCTION PROTOTYPES
-//////////////////////////////////////////////////////////////////////////////
+#define BSP_DISCRETE_INPUT_ID_SWS_LEFT ((BspApi_DiscreteId_T) 0u)
 
 //////////////////////////////////////////////////////////////////////////////
 // PUBLIC VARIABLES
 //////////////////////////////////////////////////////////////////////////////
 
 //////////////////////////////////////////////////////////////////////////////
-// PRIVATE VARIABLES
-//////////////////////////////////////////////////////////////////////////////
-
-//////////////////////////////////////////////////////////////////////////////
-// PUBLIC FUNCTIONS
-//////////////////////////////////////////////////////////////////////////////
-void SteeringWheelButtonReader_Exit(void)
-{
-
-}
-
-void SteeringWheelButtonReader_Init(void)
-{
-   Rte_Write_SteeringWheelButtonReader_SWS_PushButtonStatus_Back_ButtonStatus(ButtonStatus_NotAvailable);
-   Rte_Write_SteeringWheelButtonReader_SWS_PushButtonStatus_Down_ButtonStatus(ButtonStatus_NotAvailable);
-   Rte_Write_SteeringWheelButtonReader_SWS_PushButtonStatus_Enter_ButtonStatus(ButtonStatus_NotAvailable);
-   Rte_Write_SteeringWheelButtonReader_SWS_PushButtonStatus_Home_ButtonStatus(ButtonStatus_NotAvailable);
-   Rte_Write_SteeringWheelButtonReader_SWS_PushButtonStatus_Left_ButtonStatus(ButtonStatus_NotAvailable);
-   Rte_Write_SteeringWheelButtonReader_SWS_PushButtonStatus_Right_ButtonStatus(ButtonStatus_NotAvailable);
-   Rte_Write_SteeringWheelButtonReader_SWS_PushButtonStatus_Up_ButtonStatus(ButtonStatus_NotAvailable);
-
-}
-
-void SteeringWheelButtonReader_Run(void)
-{
-   BspApi_DiscreteState_T state;
-   Std_ReturnType result;
-   //result = Rte_Call_SteeringWheelButtonReader_BspApi_GetDiscreteInput(BSP_DISCRETE_INPUT_ID_SWS_LEFT, &state);
-}
-
-//////////////////////////////////////////////////////////////////////////////
-// PRIVATE FUNCTIONS
+// PUBLIC FUNCTION PROTOTYPES
 //////////////////////////////////////////////////////////////////////////////
 
 
+#endif //BSP_SERVICE_TYPES_H
