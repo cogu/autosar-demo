@@ -19,7 +19,7 @@ if __name__ == '__main__':
    ws.apply(BspService)
    partition = autosar.rte.Partition()
    partition.addComponent(ws.find('/ComponentType/SteeringWheelButtonReader'))
-   
+   #partition.createMockAPI()
    typeGenerator = autosar.rte.TypeGenerator(partition)
    typeGenerator.generate(derived_dir)
    headerGenerator = autosar.rte.ComponentHeaderGenerator(partition)

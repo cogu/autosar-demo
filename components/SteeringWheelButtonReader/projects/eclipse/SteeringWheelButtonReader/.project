@@ -27,27 +27,27 @@
 		<link>
 			<name>cutest</name>
 			<type>2</type>
-			<location>C:/Users/cogu/repo/autosar-demo/c-apx/cutest</location>
+			<locationURI>PARENT-5-PROJECT_LOC/c-apx/cutest</locationURI>
 		</link>
 		<link>
 			<name>derived</name>
 			<type>2</type>
-			<location>C:/Users/cogu/repo/autosar-demo/components/SteeringWheelButtonReader/derived</location>
+			<locationURI>PARENT-3-PROJECT_LOC/derived</locationURI>
 		</link>
 		<link>
 			<name>source</name>
 			<type>2</type>
-			<location>C:/Users/cogu/repo/autosar-demo/components/SteeringWheelButtonReader/source</location>
+			<locationURI>PARENT-3-PROJECT_LOC/source</locationURI>
 		</link>
 		<link>
 			<name>test</name>
 			<type>2</type>
-			<location>C:/Users/cogu/repo/autosar-demo/components/SteeringWheelButtonReader/test</location>
+			<locationURI>PARENT-3-PROJECT_LOC/test</locationURI>
 		</link>
 		<link>
 			<name>common/inc</name>
 			<type>2</type>
-			<location>C:/Users/cogu/repo/autosar-demo/components/common/inc</location>
+			<locationURI>PARENT-4-PROJECT_LOC/common/inc</locationURI>
 		</link>
 	</linkedResources>
 </projectDescription>
