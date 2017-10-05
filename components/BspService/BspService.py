@@ -25,8 +25,6 @@ class BspService(autosar.Template):
       componentName = cls.__name__
       swc.behavior.createRunnable(componentName+'_Init')
       swc.behavior.createRunnable(componentName+'_Exit')
-      swc.behavior.createRunnable(componentName+'_Run')
-      swc.behavior.createTimerEvent(componentName+'_Run', 5)
       cls.addServerRunnables(swc)
    
    @classmethod

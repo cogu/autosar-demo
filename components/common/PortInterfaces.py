@@ -12,6 +12,8 @@ RtcHours_I = createSenderReceiverInterfaceTemplate('RtcHours_I', DataTypes.Hours
 VehicleModeInternal_I = createSenderReceiverInterfaceTemplate('VehicleModeInternal_I', DataTypes.VehicleModeInternal_T)
 SystemTime_I = createSenderReceiverInterfaceTemplate('SystemTime_I', DataTypes.SystemTime_T)
 SystemDate_I = createSenderReceiverInterfaceTemplate('SystemDate_I', DataTypes.SystemDate_T)
+BspApi_DiscreteState_I = createSenderReceiverInterfaceTemplate('BspApi_DiscreteState_I', DataTypes.BspApi_DiscreteState_T, 'State')
+
 
 class BspApi_I(autosar.Template):
    @classmethod

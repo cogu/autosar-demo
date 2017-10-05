@@ -6,7 +6,6 @@ for swc in ['BspService', 'common', 'FreeRunningTimer', 'SteeringWheelButtonFeed
    sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '../'+swc)))
 import autosar
 from SteeringWheelButtonReader import SteeringWheelButtonReader
-from BspService import BspService
 
 if __name__ == '__main__':
    start=time.time()
@@ -15,11 +14,9 @@ if __name__ == '__main__':
       os.makedirs(derived_dir)
    
    ws = autosar.workspace()
-   ws.apply(SteeringWheelButtonReader)
-   ws.apply(BspService)
+   ws.apply(SteeringWheelButtonReader)   
    partition = autosar.rte.Partition()
-   partition.addComponent(ws.find('/ComponentType/SteeringWheelButtonReader'))
-   #partition.createMockAPI()
+   partition.addComponent(ws.find('/ComponentType/SteeringWheelButtonReader'))   
    typeGenerator = autosar.rte.TypeGenerator(partition)
    typeGenerator.generate(derived_dir)
    headerGenerator = autosar.rte.ComponentHeaderGenerator(partition)

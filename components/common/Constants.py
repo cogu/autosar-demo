@@ -7,11 +7,12 @@ from TemplateFactory import createConstantTemplateFromEnumerationType, createCon
 #### Enumeration Constants ####
 ButtonStatus_IV = createConstantTemplateFromEnumerationType('ButtonStatus_IV', DataTypes.ButtonStatus_T)
 VehicleModeInternal_IV = createConstantTemplateFromEnumerationType('VehicleModeInternal_IV', DataTypes.VehicleModeInternal_T)
+DiscreteState_IV = createConstantTemplateFromEnumerationType('DiscreteState_IV', DataTypes.BspApi_DiscreteState_T)
 
 #### Physical Constants ####
-RtcSeconds_IV = createConstantTemplateFromPhysicalType('C_RtcSeconds_IV', DataTypes.Seconds_T)
-RtcMinutes_IV = createConstantTemplateFromPhysicalType('C_RtcMinutes_IV', DataTypes.Minutes_T)
-RtcHours_IV = createConstantTemplateFromPhysicalType('C_RtcHours_IV', DataTypes.Hours_T)
+RtcSeconds_IV = createConstantTemplateFromPhysicalType('RtcSeconds_IV', DataTypes.Seconds_T)
+RtcMinutes_IV = createConstantTemplateFromPhysicalType('RtcMinutes_IV', DataTypes.Minutes_T)
+RtcHours_IV = createConstantTemplateFromPhysicalType('RtcHours_IV', DataTypes.Hours_T)
 
 #### Custom Constants ####
 class SystemTime_IV(autosar.Template):

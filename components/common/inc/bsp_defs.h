@@ -34,14 +34,25 @@
 //////////////////////////////////////////////////////////////////////////////
 // PUBLIC CONSTANTS AND DATA TYPES
 //////////////////////////////////////////////////////////////////////////////
-#define BSP_DISCRETE_INPUT_ID_SWS_LEFT    ((BspApi_DiscreteId_T) 0u)
-#define BSP_DISCRETE_INPUT_ID_SWS_RIGHT   ((BspApi_DiscreteId_T) 1u)
-#define BSP_DISCRETE_INPUT_ID_SWS_UP      ((BspApi_DiscreteId_T) 2u)
-#define BSP_DISCRETE_INPUT_ID_SWS_DOWN    ((BspApi_DiscreteId_T) 3u)
-#define BSP_DISCRETE_INPUT_ID_SWS_ENTER   ((BspApi_DiscreteId_T) 4u)
-#define BSP_DISCRETE_INPUT_ID_SWS_BACK    ((BspApi_DiscreteId_T) 5u)
-#define BSP_DISCRETE_INPUT_ID_SWS_HOME    ((BspApi_DiscreteId_T) 6u)
+#define BSP_DISCRETE_INPUT_ID_SWS_HOME    ((BspApi_DiscreteId_T) 0u)
+#define BSP_DISCRETE_INPUT_ID_SWS_BACK    ((BspApi_DiscreteId_T) 1u)
+#define BSP_DISCRETE_INPUT_ID_SWS_ENTER   ((BspApi_DiscreteId_T) 2u)
+#define BSP_DISCRETE_INPUT_ID_SWS_LEFT    ((BspApi_DiscreteId_T) 3u)
+#define BSP_DISCRETE_INPUT_ID_SWS_RIGHT   ((BspApi_DiscreteId_T) 4u)
+#define BSP_DISCRETE_INPUT_ID_SWS_UP      ((BspApi_DiscreteId_T) 5u)
+#define BSP_DISCRETE_INPUT_ID_SWS_DOWN    ((BspApi_DiscreteId_T) 6u)
+
 #define NUM_BSP_DISCRETE_INPUTS           7u
+
+#define BSP_DISCRETE_OUTPUT_ID_LED_HOME    ((BspApi_DiscreteId_T) 0u)
+#define BSP_DISCRETE_OUTPUT_ID_LED_BACK    ((BspApi_DiscreteId_T) 1u)
+#define BSP_DISCRETE_OUTPUT_ID_LED_ENTER   ((BspApi_DiscreteId_T) 2u)
+#define BSP_DISCRETE_OUTPUT_ID_LED_LEFT    ((BspApi_DiscreteId_T) 3u)
+#define BSP_DISCRETE_OUTPUT_ID_LED_RIGHT   ((BspApi_DiscreteId_T) 4u)
+#define BSP_DISCRETE_OUTPUT_ID_LED_UP      ((BspApi_DiscreteId_T) 5u)
+#define BSP_DISCRETE_OUTPUT_ID_LED_DOWN    ((BspApi_DiscreteId_T) 6u)
+
+#define NUM_BSP_DISCRETE_OUTPUTS           7u
 
 //////////////////////////////////////////////////////////////////////////////
 // PUBLIC VARIABLES
