@@ -32,7 +32,7 @@
 		<link>
 			<name>derived</name>
 			<type>2</type>
-			<location>C:/Users/cogu/repo/autosar-demo/components/BspService/derived</location>
+			<locationURI>PARENT-3-PROJECT_LOC/derived</locationURI>
 		</link>
 		<link>
 			<name>adt/inc</name>
@@ -47,97 +47,97 @@
 		<link>
 			<name>bstr/inc</name>
 			<type>2</type>
-			<location>C:/Users/cogu/repo/autosar-demo/c-apx/bstr/inc</location>
+			<locationURI>PARENT-5-PROJECT_LOC/c-apx/bstr/inc</locationURI>
 		</link>
 		<link>
 			<name>bstr/src</name>
 			<type>2</type>
-			<location>C:/Users/cogu/repo/autosar-demo/c-apx/bstr/src</location>
+			<locationURI>PARENT-5-PROJECT_LOC/c-apx/bstr/src</locationURI>
 		</link>
 		<link>
 			<name>common/inc</name>
 			<type>2</type>
-			<location>C:/Users/cogu/repo/autosar-demo/components/common/inc</location>
+			<locationURI>PARENT-4-PROJECT_LOC/common/inc</locationURI>
 		</link>
 		<link>
 			<name>dtl_type/inc</name>
 			<type>2</type>
-			<location>C:/Users/cogu/repo/autosar-demo/c-apx/dtl_type/inc</location>
+			<locationURI>PARENT-5-PROJECT_LOC/c-apx/dtl_type/inc</locationURI>
 		</link>
 		<link>
 			<name>dtl_type/src</name>
 			<type>2</type>
-			<location>C:/Users/cogu/repo/autosar-demo/c-apx/dtl_type/src</location>
+			<locationURI>PARENT-5-PROJECT_LOC/c-apx/dtl_type/src</locationURI>
 		</link>
 		<link>
 			<name>msocket/inc</name>
 			<type>2</type>
-			<location>C:/Users/cogu/repo/autosar-demo/c-apx/msocket/inc</location>
+			<locationURI>PARENT-5-PROJECT_LOC/c-apx/msocket/inc</locationURI>
 		</link>
 		<link>
 			<name>msocket/src</name>
 			<type>2</type>
-			<location>C:/Users/cogu/repo/autosar-demo/c-apx/msocket/src</location>
+			<locationURI>PARENT-5-PROJECT_LOC/c-apx/msocket/src</locationURI>
 		</link>
 		<link>
 			<name>remotefile/inc</name>
 			<type>2</type>
-			<location>C:/Users/cogu/repo/autosar-demo/c-apx/remotefile/inc</location>
+			<locationURI>PARENT-5-PROJECT_LOC/c-apx/remotefile/inc</locationURI>
 		</link>
 		<link>
 			<name>remotefile/src</name>
 			<type>2</type>
-			<location>C:/Users/cogu/repo/autosar-demo/c-apx/remotefile/src</location>
+			<locationURI>PARENT-5-PROJECT_LOC/c-apx/remotefile/src</locationURI>
 		</link>
 		<link>
 			<name>source/apx_proxy</name>
 			<type>2</type>
-			<location>C:/Users/cogu/repo/autosar-demo/components/BspService/source/apx_proxy</location>
+			<locationURI>PARENT-3-PROJECT_LOC/source/apx_proxy</locationURI>
 		</link>
 		<link>
 			<name>test/apx_proxy</name>
 			<type>2</type>
-			<location>C:/Users/cogu/repo/autosar-demo/components/BspService/test/apx_proxy</location>
+			<locationURI>PARENT-3-PROJECT_LOC/test/apx_proxy</locationURI>
 		</link>
 		<link>
 			<name>util/inc</name>
 			<type>2</type>
-			<location>C:/Users/cogu/repo/autosar-demo/c-apx/util/inc</location>
+			<locationURI>PARENT-5-PROJECT_LOC/c-apx/util/inc</locationURI>
 		</link>
 		<link>
 			<name>util/src</name>
 			<type>2</type>
-			<location>C:/Users/cogu/repo/autosar-demo/c-apx/util/src</location>
+			<locationURI>PARENT-5-PROJECT_LOC/c-apx/util/src</locationURI>
 		</link>
 		<link>
 			<name>apx/client/inc</name>
 			<type>2</type>
-			<location>C:/Users/cogu/repo/autosar-demo/c-apx/apx/client/inc</location>
+			<locationURI>PARENT-5-PROJECT_LOC/c-apx/apx/client/inc</locationURI>
 		</link>
 		<link>
 			<name>apx/client/src</name>
 			<type>2</type>
-			<location>C:/Users/cogu/repo/autosar-demo/c-apx/apx/client/src</location>
+			<locationURI>PARENT-5-PROJECT_LOC/c-apx/apx/client/src</locationURI>
 		</link>
 		<link>
 			<name>apx/common/inc</name>
 			<type>2</type>
-			<location>C:/Users/cogu/repo/autosar-demo/c-apx/apx/common/inc</location>
+			<locationURI>PARENT-5-PROJECT_LOC/c-apx/apx/common/inc</locationURI>
 		</link>
 		<link>
 			<name>apx/common/src</name>
 			<type>2</type>
-			<location>C:/Users/cogu/repo/autosar-demo/c-apx/apx/common/src</location>
+			<locationURI>PARENT-5-PROJECT_LOC/c-apx/apx/common/src</locationURI>
 		</link>
 		<link>
 			<name>apx/server/inc</name>
 			<type>2</type>
-			<location>C:/Users/cogu/repo/autosar-demo/c-apx/apx/server/inc</location>
+			<locationURI>PARENT-5-PROJECT_LOC/c-apx/apx/server/inc</locationURI>
 		</link>
 		<link>
 			<name>apx/server/src</name>
 			<type>2</type>
-			<location>C:/Users/cogu/repo/autosar-demo/c-apx/apx/server/src</location>
+			<locationURI>PARENT-5-PROJECT_LOC/c-apx/apx/server/src</locationURI>
 		</link>
 	</linkedResources>
 </projectDescription>

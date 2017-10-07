@@ -53,6 +53,13 @@ Std_ReturnType bspCallHandler_SetDiscreteOutput(BspApi_DiscreteId_T outputId, Bs
 static void test_init(CuTest* tc);
 static void test_exit(CuTest* tc);
 static void test_run(CuTest* tc);
+static void test_home_button_led(CuTest* tc);
+static void test_back_button_led(CuTest* tc);
+static void test_enter_button_led(CuTest* tc);
+static void test_left_button_led(CuTest* tc);
+static void test_right_button_led(CuTest* tc);
+static void test_up_button_led(CuTest* tc);
+static void test_down_button_led(CuTest* tc);
 //////////////////////////////////////////////////////////////////////////////
 // PUBLIC VARIABLES
 //////////////////////////////////////////////////////////////////////////////
@@ -157,6 +164,17 @@ static void test_run(CuTest* tc)
 {
    test_setup();
    SteeringWheelButtonFeedback_Init();
+   test_home_button_led(tc);
+   test_back_button_led(tc);
+   test_enter_button_led(tc);
+   test_left_button_led(tc);
+   test_right_button_led(tc);
+   test_up_button_led(tc);
+   test_down_button_led(tc);
+}
+
+static void test_home_button_led(CuTest* tc)
+{
    Rte_SetReadData_SteeringWheelButtonFeedback_SWS_PushButtonStatus_Home_ButtonStatus(ButtonStatus_Released);
    SteeringWheelButtonFeedback_Run();
    CuAssertUIntEquals(tc, BspApi_DiscreteState_Inactive, m_bsp_discreteOutputState.Up);
@@ -177,4 +195,211 @@ static void test_run(CuTest* tc)
    CuAssertUIntEquals(tc, BspApi_DiscreteState_Inactive, m_bsp_discreteOutputState.Back);
    CuAssertUIntEquals(tc, BspApi_DiscreteState_Inactive, m_bsp_discreteOutputState.Enter);
 
+   Rte_SetReadData_SteeringWheelButtonFeedback_SWS_PushButtonStatus_Home_ButtonStatus(ButtonStatus_Released);
+   SteeringWheelButtonFeedback_Run();
+   CuAssertUIntEquals(tc, BspApi_DiscreteState_Inactive, m_bsp_discreteOutputState.Up);
+   CuAssertUIntEquals(tc, BspApi_DiscreteState_Inactive, m_bsp_discreteOutputState.Down);
+   CuAssertUIntEquals(tc, BspApi_DiscreteState_Inactive, m_bsp_discreteOutputState.Left);
+   CuAssertUIntEquals(tc, BspApi_DiscreteState_Inactive, m_bsp_discreteOutputState.Right);
+   CuAssertUIntEquals(tc, BspApi_DiscreteState_Inactive, m_bsp_discreteOutputState.Home);
+   CuAssertUIntEquals(tc, BspApi_DiscreteState_Inactive, m_bsp_discreteOutputState.Back);
+   CuAssertUIntEquals(tc, BspApi_DiscreteState_Inactive, m_bsp_discreteOutputState.Enter);
+}
+
+static void test_back_button_led(CuTest* tc)
+{
+   Rte_SetReadData_SteeringWheelButtonFeedback_SWS_PushButtonStatus_Back_ButtonStatus(ButtonStatus_Released);
+   SteeringWheelButtonFeedback_Run();
+   CuAssertUIntEquals(tc, BspApi_DiscreteState_Inactive, m_bsp_discreteOutputState.Up);
+   CuAssertUIntEquals(tc, BspApi_DiscreteState_Inactive, m_bsp_discreteOutputState.Down);
+   CuAssertUIntEquals(tc, BspApi_DiscreteState_Inactive, m_bsp_discreteOutputState.Left);
+   CuAssertUIntEquals(tc, BspApi_DiscreteState_Inactive, m_bsp_discreteOutputState.Right);
+   CuAssertUIntEquals(tc, BspApi_DiscreteState_Inactive, m_bsp_discreteOutputState.Home);
+   CuAssertUIntEquals(tc, BspApi_DiscreteState_Inactive, m_bsp_discreteOutputState.Back);
+   CuAssertUIntEquals(tc, BspApi_DiscreteState_Inactive, m_bsp_discreteOutputState.Enter);
+
+   Rte_SetReadData_SteeringWheelButtonFeedback_SWS_PushButtonStatus_Back_ButtonStatus(ButtonStatus_Pressed);
+   SteeringWheelButtonFeedback_Run();
+   CuAssertUIntEquals(tc, BspApi_DiscreteState_Inactive, m_bsp_discreteOutputState.Up);
+   CuAssertUIntEquals(tc, BspApi_DiscreteState_Inactive, m_bsp_discreteOutputState.Down);
+   CuAssertUIntEquals(tc, BspApi_DiscreteState_Inactive, m_bsp_discreteOutputState.Left);
+   CuAssertUIntEquals(tc, BspApi_DiscreteState_Inactive, m_bsp_discreteOutputState.Right);
+   CuAssertUIntEquals(tc, BspApi_DiscreteState_Inactive, m_bsp_discreteOutputState.Home);
+   CuAssertUIntEquals(tc, BspApi_DiscreteState_Active, m_bsp_discreteOutputState.Back);
+   CuAssertUIntEquals(tc, BspApi_DiscreteState_Inactive, m_bsp_discreteOutputState.Enter);
+
+   Rte_SetReadData_SteeringWheelButtonFeedback_SWS_PushButtonStatus_Back_ButtonStatus(ButtonStatus_Released);
+   SteeringWheelButtonFeedback_Run();
+   CuAssertUIntEquals(tc, BspApi_DiscreteState_Inactive, m_bsp_discreteOutputState.Up);
+   CuAssertUIntEquals(tc, BspApi_DiscreteState_Inactive, m_bsp_discreteOutputState.Down);
+   CuAssertUIntEquals(tc, BspApi_DiscreteState_Inactive, m_bsp_discreteOutputState.Left);
+   CuAssertUIntEquals(tc, BspApi_DiscreteState_Inactive, m_bsp_discreteOutputState.Right);
+   CuAssertUIntEquals(tc, BspApi_DiscreteState_Inactive, m_bsp_discreteOutputState.Home);
+   CuAssertUIntEquals(tc, BspApi_DiscreteState_Inactive, m_bsp_discreteOutputState.Back);
+   CuAssertUIntEquals(tc, BspApi_DiscreteState_Inactive, m_bsp_discreteOutputState.Enter);
+}
+
+static void test_enter_button_led(CuTest* tc)
+{
+   Rte_SetReadData_SteeringWheelButtonFeedback_SWS_PushButtonStatus_Enter_ButtonStatus(ButtonStatus_Released);
+   SteeringWheelButtonFeedback_Run();
+   CuAssertUIntEquals(tc, BspApi_DiscreteState_Inactive, m_bsp_discreteOutputState.Up);
+   CuAssertUIntEquals(tc, BspApi_DiscreteState_Inactive, m_bsp_discreteOutputState.Down);
+   CuAssertUIntEquals(tc, BspApi_DiscreteState_Inactive, m_bsp_discreteOutputState.Left);
+   CuAssertUIntEquals(tc, BspApi_DiscreteState_Inactive, m_bsp_discreteOutputState.Right);
+   CuAssertUIntEquals(tc, BspApi_DiscreteState_Inactive, m_bsp_discreteOutputState.Home);
+   CuAssertUIntEquals(tc, BspApi_DiscreteState_Inactive, m_bsp_discreteOutputState.Back);
+   CuAssertUIntEquals(tc, BspApi_DiscreteState_Inactive, m_bsp_discreteOutputState.Enter);
+
+   Rte_SetReadData_SteeringWheelButtonFeedback_SWS_PushButtonStatus_Enter_ButtonStatus(ButtonStatus_Pressed);
+   SteeringWheelButtonFeedback_Run();
+   CuAssertUIntEquals(tc, BspApi_DiscreteState_Inactive, m_bsp_discreteOutputState.Up);
+   CuAssertUIntEquals(tc, BspApi_DiscreteState_Inactive, m_bsp_discreteOutputState.Down);
+   CuAssertUIntEquals(tc, BspApi_DiscreteState_Inactive, m_bsp_discreteOutputState.Left);
+   CuAssertUIntEquals(tc, BspApi_DiscreteState_Inactive, m_bsp_discreteOutputState.Right);
+   CuAssertUIntEquals(tc, BspApi_DiscreteState_Inactive, m_bsp_discreteOutputState.Home);
+   CuAssertUIntEquals(tc, BspApi_DiscreteState_Inactive, m_bsp_discreteOutputState.Back);
+   CuAssertUIntEquals(tc, BspApi_DiscreteState_Active, m_bsp_discreteOutputState.Enter);
+
+   Rte_SetReadData_SteeringWheelButtonFeedback_SWS_PushButtonStatus_Enter_ButtonStatus(ButtonStatus_Released);
+   SteeringWheelButtonFeedback_Run();
+   CuAssertUIntEquals(tc, BspApi_DiscreteState_Inactive, m_bsp_discreteOutputState.Up);
+   CuAssertUIntEquals(tc, BspApi_DiscreteState_Inactive, m_bsp_discreteOutputState.Down);
+   CuAssertUIntEquals(tc, BspApi_DiscreteState_Inactive, m_bsp_discreteOutputState.Left);
+   CuAssertUIntEquals(tc, BspApi_DiscreteState_Inactive, m_bsp_discreteOutputState.Right);
+   CuAssertUIntEquals(tc, BspApi_DiscreteState_Inactive, m_bsp_discreteOutputState.Home);
+   CuAssertUIntEquals(tc, BspApi_DiscreteState_Inactive, m_bsp_discreteOutputState.Back);
+   CuAssertUIntEquals(tc, BspApi_DiscreteState_Inactive, m_bsp_discreteOutputState.Enter);
+}
+
+static void test_left_button_led(CuTest* tc)
+{
+   Rte_SetReadData_SteeringWheelButtonFeedback_SWS_PushButtonStatus_Left_ButtonStatus(ButtonStatus_Released);
+   SteeringWheelButtonFeedback_Run();
+   CuAssertUIntEquals(tc, BspApi_DiscreteState_Inactive, m_bsp_discreteOutputState.Up);
+   CuAssertUIntEquals(tc, BspApi_DiscreteState_Inactive, m_bsp_discreteOutputState.Down);
+   CuAssertUIntEquals(tc, BspApi_DiscreteState_Inactive, m_bsp_discreteOutputState.Left);
+   CuAssertUIntEquals(tc, BspApi_DiscreteState_Inactive, m_bsp_discreteOutputState.Right);
+   CuAssertUIntEquals(tc, BspApi_DiscreteState_Inactive, m_bsp_discreteOutputState.Home);
+   CuAssertUIntEquals(tc, BspApi_DiscreteState_Inactive, m_bsp_discreteOutputState.Back);
+   CuAssertUIntEquals(tc, BspApi_DiscreteState_Inactive, m_bsp_discreteOutputState.Enter);
+
+   Rte_SetReadData_SteeringWheelButtonFeedback_SWS_PushButtonStatus_Left_ButtonStatus(ButtonStatus_Pressed);
+   SteeringWheelButtonFeedback_Run();
+   CuAssertUIntEquals(tc, BspApi_DiscreteState_Inactive, m_bsp_discreteOutputState.Up);
+   CuAssertUIntEquals(tc, BspApi_DiscreteState_Inactive, m_bsp_discreteOutputState.Down);
+   CuAssertUIntEquals(tc, BspApi_DiscreteState_Active, m_bsp_discreteOutputState.Left);
+   CuAssertUIntEquals(tc, BspApi_DiscreteState_Inactive, m_bsp_discreteOutputState.Right);
+   CuAssertUIntEquals(tc, BspApi_DiscreteState_Inactive, m_bsp_discreteOutputState.Home);
+   CuAssertUIntEquals(tc, BspApi_DiscreteState_Inactive, m_bsp_discreteOutputState.Back);
+   CuAssertUIntEquals(tc, BspApi_DiscreteState_Inactive, m_bsp_discreteOutputState.Enter);
+
+   Rte_SetReadData_SteeringWheelButtonFeedback_SWS_PushButtonStatus_Left_ButtonStatus(ButtonStatus_Released);
+   SteeringWheelButtonFeedback_Run();
+   CuAssertUIntEquals(tc, BspApi_DiscreteState_Inactive, m_bsp_discreteOutputState.Up);
+   CuAssertUIntEquals(tc, BspApi_DiscreteState_Inactive, m_bsp_discreteOutputState.Down);
+   CuAssertUIntEquals(tc, BspApi_DiscreteState_Inactive, m_bsp_discreteOutputState.Left);
+   CuAssertUIntEquals(tc, BspApi_DiscreteState_Inactive, m_bsp_discreteOutputState.Right);
+   CuAssertUIntEquals(tc, BspApi_DiscreteState_Inactive, m_bsp_discreteOutputState.Home);
+   CuAssertUIntEquals(tc, BspApi_DiscreteState_Inactive, m_bsp_discreteOutputState.Back);
+   CuAssertUIntEquals(tc, BspApi_DiscreteState_Inactive, m_bsp_discreteOutputState.Enter);
+}
+
+static void test_right_button_led(CuTest* tc)
+{
+   Rte_SetReadData_SteeringWheelButtonFeedback_SWS_PushButtonStatus_Right_ButtonStatus(ButtonStatus_Released);
+   SteeringWheelButtonFeedback_Run();
+   CuAssertUIntEquals(tc, BspApi_DiscreteState_Inactive, m_bsp_discreteOutputState.Up);
+   CuAssertUIntEquals(tc, BspApi_DiscreteState_Inactive, m_bsp_discreteOutputState.Down);
+   CuAssertUIntEquals(tc, BspApi_DiscreteState_Inactive, m_bsp_discreteOutputState.Left);
+   CuAssertUIntEquals(tc, BspApi_DiscreteState_Inactive, m_bsp_discreteOutputState.Right);
+   CuAssertUIntEquals(tc, BspApi_DiscreteState_Inactive, m_bsp_discreteOutputState.Home);
+   CuAssertUIntEquals(tc, BspApi_DiscreteState_Inactive, m_bsp_discreteOutputState.Back);
+   CuAssertUIntEquals(tc, BspApi_DiscreteState_Inactive, m_bsp_discreteOutputState.Enter);
+
+   Rte_SetReadData_SteeringWheelButtonFeedback_SWS_PushButtonStatus_Right_ButtonStatus(ButtonStatus_Pressed);
+   SteeringWheelButtonFeedback_Run();
+   CuAssertUIntEquals(tc, BspApi_DiscreteState_Inactive, m_bsp_discreteOutputState.Up);
+   CuAssertUIntEquals(tc, BspApi_DiscreteState_Inactive, m_bsp_discreteOutputState.Down);
+   CuAssertUIntEquals(tc, BspApi_DiscreteState_Inactive, m_bsp_discreteOutputState.Left);
+   CuAssertUIntEquals(tc, BspApi_DiscreteState_Active, m_bsp_discreteOutputState.Right);
+   CuAssertUIntEquals(tc, BspApi_DiscreteState_Inactive, m_bsp_discreteOutputState.Home);
+   CuAssertUIntEquals(tc, BspApi_DiscreteState_Inactive, m_bsp_discreteOutputState.Back);
+   CuAssertUIntEquals(tc, BspApi_DiscreteState_Inactive, m_bsp_discreteOutputState.Enter);
+
+   Rte_SetReadData_SteeringWheelButtonFeedback_SWS_PushButtonStatus_Right_ButtonStatus(ButtonStatus_Released);
+   SteeringWheelButtonFeedback_Run();
+   CuAssertUIntEquals(tc, BspApi_DiscreteState_Inactive, m_bsp_discreteOutputState.Up);
+   CuAssertUIntEquals(tc, BspApi_DiscreteState_Inactive, m_bsp_discreteOutputState.Down);
+   CuAssertUIntEquals(tc, BspApi_DiscreteState_Inactive, m_bsp_discreteOutputState.Left);
+   CuAssertUIntEquals(tc, BspApi_DiscreteState_Inactive, m_bsp_discreteOutputState.Right);
+   CuAssertUIntEquals(tc, BspApi_DiscreteState_Inactive, m_bsp_discreteOutputState.Home);
+   CuAssertUIntEquals(tc, BspApi_DiscreteState_Inactive, m_bsp_discreteOutputState.Back);
+   CuAssertUIntEquals(tc, BspApi_DiscreteState_Inactive, m_bsp_discreteOutputState.Enter);
+}
+
+static void test_up_button_led(CuTest* tc)
+{
+   Rte_SetReadData_SteeringWheelButtonFeedback_SWS_PushButtonStatus_Up_ButtonStatus(ButtonStatus_Released);
+   SteeringWheelButtonFeedback_Run();
+   CuAssertUIntEquals(tc, BspApi_DiscreteState_Inactive, m_bsp_discreteOutputState.Up);
+   CuAssertUIntEquals(tc, BspApi_DiscreteState_Inactive, m_bsp_discreteOutputState.Down);
+   CuAssertUIntEquals(tc, BspApi_DiscreteState_Inactive, m_bsp_discreteOutputState.Left);
+   CuAssertUIntEquals(tc, BspApi_DiscreteState_Inactive, m_bsp_discreteOutputState.Right);
+   CuAssertUIntEquals(tc, BspApi_DiscreteState_Inactive, m_bsp_discreteOutputState.Home);
+   CuAssertUIntEquals(tc, BspApi_DiscreteState_Inactive, m_bsp_discreteOutputState.Back);
+   CuAssertUIntEquals(tc, BspApi_DiscreteState_Inactive, m_bsp_discreteOutputState.Enter);
+
+   Rte_SetReadData_SteeringWheelButtonFeedback_SWS_PushButtonStatus_Up_ButtonStatus(ButtonStatus_Pressed);
+   SteeringWheelButtonFeedback_Run();
+   CuAssertUIntEquals(tc, BspApi_DiscreteState_Active, m_bsp_discreteOutputState.Up);
+   CuAssertUIntEquals(tc, BspApi_DiscreteState_Inactive, m_bsp_discreteOutputState.Down);
+   CuAssertUIntEquals(tc, BspApi_DiscreteState_Inactive, m_bsp_discreteOutputState.Left);
+   CuAssertUIntEquals(tc, BspApi_DiscreteState_Inactive, m_bsp_discreteOutputState.Right);
+   CuAssertUIntEquals(tc, BspApi_DiscreteState_Inactive, m_bsp_discreteOutputState.Home);
+   CuAssertUIntEquals(tc, BspApi_DiscreteState_Inactive, m_bsp_discreteOutputState.Back);
+   CuAssertUIntEquals(tc, BspApi_DiscreteState_Inactive, m_bsp_discreteOutputState.Enter);
+
+   Rte_SetReadData_SteeringWheelButtonFeedback_SWS_PushButtonStatus_Up_ButtonStatus(ButtonStatus_Released);
+   SteeringWheelButtonFeedback_Run();
+   CuAssertUIntEquals(tc, BspApi_DiscreteState_Inactive, m_bsp_discreteOutputState.Up);
+   CuAssertUIntEquals(tc, BspApi_DiscreteState_Inactive, m_bsp_discreteOutputState.Down);
+   CuAssertUIntEquals(tc, BspApi_DiscreteState_Inactive, m_bsp_discreteOutputState.Left);
+   CuAssertUIntEquals(tc, BspApi_DiscreteState_Inactive, m_bsp_discreteOutputState.Right);
+   CuAssertUIntEquals(tc, BspApi_DiscreteState_Inactive, m_bsp_discreteOutputState.Home);
+   CuAssertUIntEquals(tc, BspApi_DiscreteState_Inactive, m_bsp_discreteOutputState.Back);
+   CuAssertUIntEquals(tc, BspApi_DiscreteState_Inactive, m_bsp_discreteOutputState.Enter);
+}
+
+static void test_down_button_led(CuTest* tc)
+{
+   Rte_SetReadData_SteeringWheelButtonFeedback_SWS_PushButtonStatus_Down_ButtonStatus(ButtonStatus_Released);
+   SteeringWheelButtonFeedback_Run();
+   CuAssertUIntEquals(tc, BspApi_DiscreteState_Inactive, m_bsp_discreteOutputState.Up);
+   CuAssertUIntEquals(tc, BspApi_DiscreteState_Inactive, m_bsp_discreteOutputState.Down);
+   CuAssertUIntEquals(tc, BspApi_DiscreteState_Inactive, m_bsp_discreteOutputState.Left);
+   CuAssertUIntEquals(tc, BspApi_DiscreteState_Inactive, m_bsp_discreteOutputState.Right);
+   CuAssertUIntEquals(tc, BspApi_DiscreteState_Inactive, m_bsp_discreteOutputState.Home);
+   CuAssertUIntEquals(tc, BspApi_DiscreteState_Inactive, m_bsp_discreteOutputState.Back);
+   CuAssertUIntEquals(tc, BspApi_DiscreteState_Inactive, m_bsp_discreteOutputState.Enter);
+
+   Rte_SetReadData_SteeringWheelButtonFeedback_SWS_PushButtonStatus_Down_ButtonStatus(ButtonStatus_Pressed);
+   SteeringWheelButtonFeedback_Run();
+   CuAssertUIntEquals(tc, BspApi_DiscreteState_Inactive, m_bsp_discreteOutputState.Up);
+   CuAssertUIntEquals(tc, BspApi_DiscreteState_Active, m_bsp_discreteOutputState.Down);
+   CuAssertUIntEquals(tc, BspApi_DiscreteState_Inactive, m_bsp_discreteOutputState.Left);
+   CuAssertUIntEquals(tc, BspApi_DiscreteState_Inactive, m_bsp_discreteOutputState.Right);
+   CuAssertUIntEquals(tc, BspApi_DiscreteState_Inactive, m_bsp_discreteOutputState.Home);
+   CuAssertUIntEquals(tc, BspApi_DiscreteState_Inactive, m_bsp_discreteOutputState.Back);
+   CuAssertUIntEquals(tc, BspApi_DiscreteState_Inactive, m_bsp_discreteOutputState.Enter);
+
+   Rte_SetReadData_SteeringWheelButtonFeedback_SWS_PushButtonStatus_Down_ButtonStatus(ButtonStatus_Released);
+   SteeringWheelButtonFeedback_Run();
+   CuAssertUIntEquals(tc, BspApi_DiscreteState_Inactive, m_bsp_discreteOutputState.Up);
+   CuAssertUIntEquals(tc, BspApi_DiscreteState_Inactive, m_bsp_discreteOutputState.Down);
+   CuAssertUIntEquals(tc, BspApi_DiscreteState_Inactive, m_bsp_discreteOutputState.Left);
+   CuAssertUIntEquals(tc, BspApi_DiscreteState_Inactive, m_bsp_discreteOutputState.Right);
+   CuAssertUIntEquals(tc, BspApi_DiscreteState_Inactive, m_bsp_discreteOutputState.Home);
+   CuAssertUIntEquals(tc, BspApi_DiscreteState_Inactive, m_bsp_discreteOutputState.Back);
+   CuAssertUIntEquals(tc, BspApi_DiscreteState_Inactive, m_bsp_discreteOutputState.Enter);
 }
