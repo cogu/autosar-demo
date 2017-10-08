@@ -59,13 +59,13 @@ BspApi_DiscreteState_T m_discreteState[NUM_INTERNAL_ID];
 //////////////////////////////////////////////////////////////////////////////
 void SteeringWheelButtonFeedback_Init(void)
 {
-   Rte_Call_SteeringWheelButtonFeedback_BspApi_SetDiscreteOutput(BSP_DISCRETE_OUTPUT_ID_LED_HOME, BspApi_DiscreteState_Inactive);
-   Rte_Call_SteeringWheelButtonFeedback_BspApi_SetDiscreteOutput(BSP_DISCRETE_OUTPUT_ID_LED_BACK, BspApi_DiscreteState_Inactive);
-   Rte_Call_SteeringWheelButtonFeedback_BspApi_SetDiscreteOutput(BSP_DISCRETE_OUTPUT_ID_LED_ENTER, BspApi_DiscreteState_Inactive);
-   Rte_Call_SteeringWheelButtonFeedback_BspApi_SetDiscreteOutput(BSP_DISCRETE_OUTPUT_ID_LED_LEFT, BspApi_DiscreteState_Inactive);
-   Rte_Call_SteeringWheelButtonFeedback_BspApi_SetDiscreteOutput(BSP_DISCRETE_OUTPUT_ID_LED_RIGHT, BspApi_DiscreteState_Inactive);
-   Rte_Call_SteeringWheelButtonFeedback_BspApi_SetDiscreteOutput(BSP_DISCRETE_OUTPUT_ID_LED_UP, BspApi_DiscreteState_Inactive);
-   Rte_Call_SteeringWheelButtonFeedback_BspApi_SetDiscreteOutput(BSP_DISCRETE_OUTPUT_ID_LED_DOWN, BspApi_DiscreteState_Inactive);
+   Rte_Call_BspApi_SetDiscreteOutput(BSP_DISCRETE_OUTPUT_ID_LED_HOME, BspApi_DiscreteState_Inactive);
+   Rte_Call_BspApi_SetDiscreteOutput(BSP_DISCRETE_OUTPUT_ID_LED_BACK, BspApi_DiscreteState_Inactive);
+   Rte_Call_BspApi_SetDiscreteOutput(BSP_DISCRETE_OUTPUT_ID_LED_ENTER, BspApi_DiscreteState_Inactive);
+   Rte_Call_BspApi_SetDiscreteOutput(BSP_DISCRETE_OUTPUT_ID_LED_LEFT, BspApi_DiscreteState_Inactive);
+   Rte_Call_BspApi_SetDiscreteOutput(BSP_DISCRETE_OUTPUT_ID_LED_RIGHT, BspApi_DiscreteState_Inactive);
+   Rte_Call_BspApi_SetDiscreteOutput(BSP_DISCRETE_OUTPUT_ID_LED_UP, BspApi_DiscreteState_Inactive);
+   Rte_Call_BspApi_SetDiscreteOutput(BSP_DISCRETE_OUTPUT_ID_LED_DOWN, BspApi_DiscreteState_Inactive);
    m_discreteState[HOME] = BspApi_DiscreteState_Inactive;
    m_discreteState[BACK] = BspApi_DiscreteState_Inactive;
    m_discreteState[ENTER] = BspApi_DiscreteState_Inactive;
@@ -77,13 +77,13 @@ void SteeringWheelButtonFeedback_Init(void)
 
 void SteeringWheelButtonFeedback_Exit(void)
 {
-   Rte_Call_SteeringWheelButtonFeedback_BspApi_SetDiscreteOutput(BSP_DISCRETE_OUTPUT_ID_LED_HOME, BspApi_DiscreteState_Inactive);
-   Rte_Call_SteeringWheelButtonFeedback_BspApi_SetDiscreteOutput(BSP_DISCRETE_OUTPUT_ID_LED_BACK, BspApi_DiscreteState_Inactive);
-   Rte_Call_SteeringWheelButtonFeedback_BspApi_SetDiscreteOutput(BSP_DISCRETE_OUTPUT_ID_LED_ENTER, BspApi_DiscreteState_Inactive);
-   Rte_Call_SteeringWheelButtonFeedback_BspApi_SetDiscreteOutput(BSP_DISCRETE_OUTPUT_ID_LED_LEFT, BspApi_DiscreteState_Inactive);
-   Rte_Call_SteeringWheelButtonFeedback_BspApi_SetDiscreteOutput(BSP_DISCRETE_OUTPUT_ID_LED_RIGHT, BspApi_DiscreteState_Inactive);
-   Rte_Call_SteeringWheelButtonFeedback_BspApi_SetDiscreteOutput(BSP_DISCRETE_OUTPUT_ID_LED_UP, BspApi_DiscreteState_Inactive);
-   Rte_Call_SteeringWheelButtonFeedback_BspApi_SetDiscreteOutput(BSP_DISCRETE_OUTPUT_ID_LED_DOWN, BspApi_DiscreteState_Inactive);
+   Rte_Call_BspApi_SetDiscreteOutput(BSP_DISCRETE_OUTPUT_ID_LED_HOME, BspApi_DiscreteState_Inactive);
+   Rte_Call_BspApi_SetDiscreteOutput(BSP_DISCRETE_OUTPUT_ID_LED_BACK, BspApi_DiscreteState_Inactive);
+   Rte_Call_BspApi_SetDiscreteOutput(BSP_DISCRETE_OUTPUT_ID_LED_ENTER, BspApi_DiscreteState_Inactive);
+   Rte_Call_BspApi_SetDiscreteOutput(BSP_DISCRETE_OUTPUT_ID_LED_LEFT, BspApi_DiscreteState_Inactive);
+   Rte_Call_BspApi_SetDiscreteOutput(BSP_DISCRETE_OUTPUT_ID_LED_RIGHT, BspApi_DiscreteState_Inactive);
+   Rte_Call_BspApi_SetDiscreteOutput(BSP_DISCRETE_OUTPUT_ID_LED_UP, BspApi_DiscreteState_Inactive);
+   Rte_Call_BspApi_SetDiscreteOutput(BSP_DISCRETE_OUTPUT_ID_LED_DOWN, BspApi_DiscreteState_Inactive);
 }
 
 
@@ -156,7 +156,7 @@ static void updateDiscreteStatus(uint8 internalId, BspApi_DiscreteId_T bspId, Bs
    if (state != m_discreteState[internalId])
    {
       m_discreteState[internalId] = state;
-      Rte_Call_SteeringWheelButtonFeedback_BspApi_SetDiscreteOutput(bspId, state);
+      Rte_Call_BspApi_SetDiscreteOutput(bspId, state);
    }
 }
 

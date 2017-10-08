@@ -52,6 +52,7 @@ class BspServiceProxy(autosar.Template):
 if __name__ == '__main__':
    start=time.time()
    gen_dir = os.path.abspath('source/apx_proxy')
+   header_dir = os.path.abspath('inc/apx_proxy')
 
    ws = autosar.workspace()
    ws.apply(BspServiceProxy)
@@ -59,7 +60,7 @@ if __name__ == '__main__':
    context = apx.Context()
    #context.append(node)
    #context.generateAPX('.')
-   apx.NodeGenerator().generate(gen_dir, node, includes=['Rte_Type.h'])
+   apx.NodeGenerator().generate(gen_dir, node, includes=['Rte_Type.h'], header_dir=header_dir)
 
    delta=float(time.time()-start)*1000
    print('%dms'%(round(delta)))

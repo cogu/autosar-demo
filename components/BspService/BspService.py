@@ -3,6 +3,7 @@ sys.path.append('../common')
 import autosar
 import PortInterfaces
 import Services
+import Modes
 
 class BspService(autosar.Template):
    @classmethod
@@ -17,6 +18,7 @@ class BspService(autosar.Template):
    @classmethod
    def addPorts(cls, swc):
       componentName = cls.__name__
+      swc.apply(Modes.EcuM_CurrentMode.Require)
       swc.apply(Services.BspApi.Provide)
       
    
@@ -34,6 +36,9 @@ class BspService(autosar.Template):
       swc.behavior.createRunnable(componentName+'_SetDiscreteOutput', concurrent=True)
       swc.behavior.createOperationInvokedEvent(componentName+'_GetDiscreteInput', 'BspApi/GetDiscreteInput')
       swc.behavior.createOperationInvokedEvent(componentName+'_SetDiscreteOutput', 'BspApi/SetDiscreteOutput')
+      swc.behavior.createModeSwitchEvent(componentName+'_Init', 'EcuM_CurrentMode/RUN', activationType = 'ENTRY')
+      swc.behavior.createModeSwitchEvent(componentName+'_Exit', 'EcuM_CurrentMode/RUN', activationType = 'EXIT')
+
 
 if __name__ == '__main__':
    ws = autosar.workspace()

@@ -28,7 +28,7 @@ class SteeringWheelButtonReader(autosar.Template):
       swc.apply(Signals.SWS_PushButtonStatus_Left.Send)
       swc.apply(Signals.SWS_PushButtonStatus_Right.Send)
       swc.apply(Signals.SWS_PushButtonStatus_Up.Send)
-      swc.apply(Signals.VehicleModeInternal.Receive)
+      #swc.apply(Signals.VehicleModeInternal.Receive)
       swc.apply(Services.BspApi.Call)
    
    @classmethod
@@ -44,7 +44,9 @@ class SteeringWheelButtonReader(autosar.Template):
       swc.behavior.createRunnable(componentName+'_Exit', portAccess=[x.name for x in swc.providePorts])
       swc.behavior.createRunnable(componentName+'_Run', portAccess=[x.name for x in swc.requirePorts+swc.providePorts if x.name not in accessIgnoreList] + ['BspApi/GetDiscreteInput'])
       swc.behavior.createTimerEvent(componentName+'_Run', 10)
-      swc.behavior.createModeSwitchEvent(componentName+'_Init', 'EcuM_CurrentMode/RUN')
+      swc.behavior.createModeSwitchEvent(componentName+'_Init', 'EcuM_CurrentMode/RUN', activationType = 'ENTRY')
+      swc.behavior.createModeSwitchEvent(componentName+'_Exit', 'EcuM_CurrentMode/RUN', activationType = 'EXIT')
+      
 
 if __name__ == '__main__':
    ws = autosar.workspace()

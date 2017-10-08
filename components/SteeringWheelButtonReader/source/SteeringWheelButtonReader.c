@@ -98,7 +98,7 @@ void SteeringWheelButtonReader_Run(void)
    {
       BspApi_DiscreteState_T inputState;
       BspApi_DiscreteId_T id = idList[i];
-      Rte_Call_SteeringWheelButtonReader_BspApi_GetDiscreteInput(id, &inputState);
+      Rte_Call_BspApi_GetDiscreteInput(id, &inputState);
       ButtonStatus_T newState = translateDiscreteInput(inputState);
       updateDebouncedButtonState(&m_debouncedState[i], newState);
    }
