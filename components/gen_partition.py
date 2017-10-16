@@ -17,6 +17,7 @@ def create_os_config(partition):
    app_task = os_cfg.create_task('App_Task')
    service_task = os_cfg.create_task('Service_Task')
    map_runnables_to_task(os_cfg, app_task, service_task)
+   create_mode_switch_events(os_cfg, partition)
    return os_cfg
 
 def map_runnables_to_task(os_cfg, app_task, service_task):
@@ -28,6 +29,10 @@ def map_runnables_to_task(os_cfg, app_task, service_task):
          for runnable in component.runnables:
             app_task.map_runnable(runnable)
 
+def create_mode_switch_events(os_cfg, partition):
+   for func in partition.mode_switch_functions.values():
+      for callback in func.calls:
+         os_cfg.mode_switch_calls.add(callback)
 
 if __name__ == '__main__':
    start=time.time()
@@ -41,6 +46,7 @@ if __name__ == '__main__':
    #ws.apply(RealTimeClock)
    ws.apply(BspService)
    partition = autosar.rte.Partition()
+   
    for component in ws.findall('/ComponentType/*'):
       if isinstance(component, autosar.component.ComponentType):
          partition.addComponent(component)
@@ -73,8 +79,10 @@ if __name__ == '__main__':
 
    os_cfg = create_os_config(partition)
    osConfigGenerator = autosar.bsw.OsConfigGenerator(os_cfg)
-   osConfigGenerator.generateEventCfg(derived_dir)
+   osConfigGenerator.generate(derived_dir)
    
+   rteTaskGenerator = autosar.rte.RteTaskGenerator(partition, os_cfg)
+   rteTaskGenerator.generate(derived_dir)
 
    delta=float(time.time()-start)*1000
    print('%dms'%(round(delta)))

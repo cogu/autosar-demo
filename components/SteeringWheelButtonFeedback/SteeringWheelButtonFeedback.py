@@ -44,7 +44,7 @@ class SteeringWheelButtonFeedback(autosar.Template):
       swc.behavior.createRunnable(componentName+'_Run', portAccess=[x.name for x in swc.requirePorts+swc.providePorts if x.name not in accessIgnoreList] + ['BspApi/SetDiscreteOutput'])
       swc.behavior.createTimerEvent(componentName+'_Run', 10)
       swc.behavior.createModeSwitchEvent(componentName+'_Init', 'EcuM_CurrentMode/RUN', activationType = 'ENTRY')
-#      swc.behavior.createModeSwitchEvent(componentName+'_Exit', 'EcuM_CurrentMode/RUN', activationType = 'EXIT')
+      swc.behavior.createModeSwitchEvent(componentName+'_Exit', 'EcuM_CurrentMode/RUN', activationType = 'EXIT')
 
 
 if __name__ == '__main__':
