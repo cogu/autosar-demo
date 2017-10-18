@@ -13,11 +13,10 @@ import Signals
 import apx
 
 def create_os_config(partition):
-   os_cfg = os_cfg = autosar.bsw.OsConfig()
+   os_cfg = os_cfg = autosar.bsw.OsConfig(partition)
    app_task = os_cfg.create_task('App_Task')
    service_task = os_cfg.create_task('Service_Task')
    map_runnables_to_task(os_cfg, app_task, service_task)
-   create_mode_switch_events(os_cfg, partition)
    return os_cfg
 
 def map_runnables_to_task(os_cfg, app_task, service_task):
@@ -29,10 +28,6 @@ def map_runnables_to_task(os_cfg, app_task, service_task):
          for runnable in component.runnables:
             app_task.map_runnable(runnable)
 
-def create_mode_switch_events(os_cfg, partition):
-   for func in partition.mode_switch_functions.values():
-      for callback in func.calls:
-         os_cfg.mode_switch_calls.add(callback)
 
 if __name__ == '__main__':
    start=time.time()
