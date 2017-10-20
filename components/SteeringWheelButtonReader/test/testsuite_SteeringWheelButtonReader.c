@@ -83,13 +83,13 @@ static void test_init(CuTest* tc)
    Rte_Write_SteeringWheelButtonReader_SWS_PushButtonStatus_Right_ButtonStatus(ButtonStatus_Released);
    Rte_Write_SteeringWheelButtonReader_SWS_PushButtonStatus_Up_ButtonStatus(ButtonStatus_Released);
    SteeringWheelButtonReader_Init();
-   CuAssertUIntEquals(tc, ButtonStatus_NotAvailable, Rte_GetData_SteeringWheelButtonReader_SWS_PushButtonStatus_Back_ButtonStatus());
-   CuAssertUIntEquals(tc, ButtonStatus_NotAvailable, Rte_GetData_SteeringWheelButtonReader_SWS_PushButtonStatus_Down_ButtonStatus());
-   CuAssertUIntEquals(tc, ButtonStatus_NotAvailable, Rte_GetData_SteeringWheelButtonReader_SWS_PushButtonStatus_Enter_ButtonStatus());
-   CuAssertUIntEquals(tc, ButtonStatus_NotAvailable, Rte_GetData_SteeringWheelButtonReader_SWS_PushButtonStatus_Home_ButtonStatus());
-   CuAssertUIntEquals(tc, ButtonStatus_NotAvailable, Rte_GetData_SteeringWheelButtonReader_SWS_PushButtonStatus_Left_ButtonStatus());
-   CuAssertUIntEquals(tc, ButtonStatus_NotAvailable, Rte_GetData_SteeringWheelButtonReader_SWS_PushButtonStatus_Right_ButtonStatus());
-   CuAssertUIntEquals(tc, ButtonStatus_NotAvailable, Rte_GetData_SteeringWheelButtonReader_SWS_PushButtonStatus_Up_ButtonStatus());
+   CuAssertUIntEquals(tc, ButtonStatus_NotAvailable, Rte_GetWriteData_SteeringWheelButtonReader_SWS_PushButtonStatus_Back_ButtonStatus());
+   CuAssertUIntEquals(tc, ButtonStatus_NotAvailable, Rte_GetWriteData_SteeringWheelButtonReader_SWS_PushButtonStatus_Down_ButtonStatus());
+   CuAssertUIntEquals(tc, ButtonStatus_NotAvailable, Rte_GetWriteData_SteeringWheelButtonReader_SWS_PushButtonStatus_Enter_ButtonStatus());
+   CuAssertUIntEquals(tc, ButtonStatus_NotAvailable, Rte_GetWriteData_SteeringWheelButtonReader_SWS_PushButtonStatus_Home_ButtonStatus());
+   CuAssertUIntEquals(tc, ButtonStatus_NotAvailable, Rte_GetWriteData_SteeringWheelButtonReader_SWS_PushButtonStatus_Left_ButtonStatus());
+   CuAssertUIntEquals(tc, ButtonStatus_NotAvailable, Rte_GetWriteData_SteeringWheelButtonReader_SWS_PushButtonStatus_Right_ButtonStatus());
+   CuAssertUIntEquals(tc, ButtonStatus_NotAvailable, Rte_GetWriteData_SteeringWheelButtonReader_SWS_PushButtonStatus_Up_ButtonStatus());
 }
 
 static void test_up(CuTest* tc)
@@ -97,55 +97,55 @@ static void test_up(CuTest* tc)
    uint16 i;
    test_setup();
    SteeringWheelButtonReader_Run();
-   CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetData_SteeringWheelButtonReader_SWS_PushButtonStatus_Back_ButtonStatus());
-   CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetData_SteeringWheelButtonReader_SWS_PushButtonStatus_Down_ButtonStatus());
-   CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetData_SteeringWheelButtonReader_SWS_PushButtonStatus_Enter_ButtonStatus());
-   CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetData_SteeringWheelButtonReader_SWS_PushButtonStatus_Home_ButtonStatus());
-   CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetData_SteeringWheelButtonReader_SWS_PushButtonStatus_Left_ButtonStatus());
-   CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetData_SteeringWheelButtonReader_SWS_PushButtonStatus_Right_ButtonStatus());
-   CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetData_SteeringWheelButtonReader_SWS_PushButtonStatus_Up_ButtonStatus());
+   CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetWriteData_SteeringWheelButtonReader_SWS_PushButtonStatus_Back_ButtonStatus());
+   CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetWriteData_SteeringWheelButtonReader_SWS_PushButtonStatus_Down_ButtonStatus());
+   CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetWriteData_SteeringWheelButtonReader_SWS_PushButtonStatus_Enter_ButtonStatus());
+   CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetWriteData_SteeringWheelButtonReader_SWS_PushButtonStatus_Home_ButtonStatus());
+   CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetWriteData_SteeringWheelButtonReader_SWS_PushButtonStatus_Left_ButtonStatus());
+   CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetWriteData_SteeringWheelButtonReader_SWS_PushButtonStatus_Right_ButtonStatus());
+   CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetWriteData_SteeringWheelButtonReader_SWS_PushButtonStatus_Up_ButtonStatus());
 
    //Up
    m_bsp_discreteInputState.Up = BspApi_DiscreteState_Active;
    for (i=0;i<DEBOUNCE_LIMIT-1;i++)
    {
       SteeringWheelButtonReader_Run();
-      CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetData_SteeringWheelButtonReader_SWS_PushButtonStatus_Back_ButtonStatus());
-      CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetData_SteeringWheelButtonReader_SWS_PushButtonStatus_Down_ButtonStatus());
-      CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetData_SteeringWheelButtonReader_SWS_PushButtonStatus_Enter_ButtonStatus());
-      CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetData_SteeringWheelButtonReader_SWS_PushButtonStatus_Home_ButtonStatus());
-      CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetData_SteeringWheelButtonReader_SWS_PushButtonStatus_Left_ButtonStatus());
-      CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetData_SteeringWheelButtonReader_SWS_PushButtonStatus_Right_ButtonStatus());
-      CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetData_SteeringWheelButtonReader_SWS_PushButtonStatus_Up_ButtonStatus());
+      CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetWriteData_SteeringWheelButtonReader_SWS_PushButtonStatus_Back_ButtonStatus());
+      CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetWriteData_SteeringWheelButtonReader_SWS_PushButtonStatus_Down_ButtonStatus());
+      CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetWriteData_SteeringWheelButtonReader_SWS_PushButtonStatus_Enter_ButtonStatus());
+      CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetWriteData_SteeringWheelButtonReader_SWS_PushButtonStatus_Home_ButtonStatus());
+      CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetWriteData_SteeringWheelButtonReader_SWS_PushButtonStatus_Left_ButtonStatus());
+      CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetWriteData_SteeringWheelButtonReader_SWS_PushButtonStatus_Right_ButtonStatus());
+      CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetWriteData_SteeringWheelButtonReader_SWS_PushButtonStatus_Up_ButtonStatus());
    }
    SteeringWheelButtonReader_Run();
-   CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetData_SteeringWheelButtonReader_SWS_PushButtonStatus_Back_ButtonStatus());
-   CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetData_SteeringWheelButtonReader_SWS_PushButtonStatus_Down_ButtonStatus());
-   CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetData_SteeringWheelButtonReader_SWS_PushButtonStatus_Enter_ButtonStatus());
-   CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetData_SteeringWheelButtonReader_SWS_PushButtonStatus_Home_ButtonStatus());
-   CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetData_SteeringWheelButtonReader_SWS_PushButtonStatus_Left_ButtonStatus());
-   CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetData_SteeringWheelButtonReader_SWS_PushButtonStatus_Right_ButtonStatus());
-   CuAssertUIntEquals(tc, ButtonStatus_Pressed, Rte_GetData_SteeringWheelButtonReader_SWS_PushButtonStatus_Up_ButtonStatus());
+   CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetWriteData_SteeringWheelButtonReader_SWS_PushButtonStatus_Back_ButtonStatus());
+   CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetWriteData_SteeringWheelButtonReader_SWS_PushButtonStatus_Down_ButtonStatus());
+   CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetWriteData_SteeringWheelButtonReader_SWS_PushButtonStatus_Enter_ButtonStatus());
+   CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetWriteData_SteeringWheelButtonReader_SWS_PushButtonStatus_Home_ButtonStatus());
+   CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetWriteData_SteeringWheelButtonReader_SWS_PushButtonStatus_Left_ButtonStatus());
+   CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetWriteData_SteeringWheelButtonReader_SWS_PushButtonStatus_Right_ButtonStatus());
+   CuAssertUIntEquals(tc, ButtonStatus_Pressed, Rte_GetWriteData_SteeringWheelButtonReader_SWS_PushButtonStatus_Up_ButtonStatus());
    m_bsp_discreteInputState.Up = BspApi_DiscreteState_Inactive;
    for (i=0;i<DEBOUNCE_LIMIT-1;i++)
    {
       SteeringWheelButtonReader_Run();
-      CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetData_SteeringWheelButtonReader_SWS_PushButtonStatus_Back_ButtonStatus());
-      CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetData_SteeringWheelButtonReader_SWS_PushButtonStatus_Down_ButtonStatus());
-      CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetData_SteeringWheelButtonReader_SWS_PushButtonStatus_Enter_ButtonStatus());
-      CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetData_SteeringWheelButtonReader_SWS_PushButtonStatus_Home_ButtonStatus());
-      CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetData_SteeringWheelButtonReader_SWS_PushButtonStatus_Left_ButtonStatus());
-      CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetData_SteeringWheelButtonReader_SWS_PushButtonStatus_Right_ButtonStatus());
-      CuAssertUIntEquals(tc, ButtonStatus_Pressed, Rte_GetData_SteeringWheelButtonReader_SWS_PushButtonStatus_Up_ButtonStatus());
+      CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetWriteData_SteeringWheelButtonReader_SWS_PushButtonStatus_Back_ButtonStatus());
+      CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetWriteData_SteeringWheelButtonReader_SWS_PushButtonStatus_Down_ButtonStatus());
+      CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetWriteData_SteeringWheelButtonReader_SWS_PushButtonStatus_Enter_ButtonStatus());
+      CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetWriteData_SteeringWheelButtonReader_SWS_PushButtonStatus_Home_ButtonStatus());
+      CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetWriteData_SteeringWheelButtonReader_SWS_PushButtonStatus_Left_ButtonStatus());
+      CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetWriteData_SteeringWheelButtonReader_SWS_PushButtonStatus_Right_ButtonStatus());
+      CuAssertUIntEquals(tc, ButtonStatus_Pressed, Rte_GetWriteData_SteeringWheelButtonReader_SWS_PushButtonStatus_Up_ButtonStatus());
    }
    SteeringWheelButtonReader_Run();
-   CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetData_SteeringWheelButtonReader_SWS_PushButtonStatus_Back_ButtonStatus());
-   CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetData_SteeringWheelButtonReader_SWS_PushButtonStatus_Down_ButtonStatus());
-   CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetData_SteeringWheelButtonReader_SWS_PushButtonStatus_Enter_ButtonStatus());
-   CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetData_SteeringWheelButtonReader_SWS_PushButtonStatus_Home_ButtonStatus());
-   CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetData_SteeringWheelButtonReader_SWS_PushButtonStatus_Left_ButtonStatus());
-   CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetData_SteeringWheelButtonReader_SWS_PushButtonStatus_Right_ButtonStatus());
-   CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetData_SteeringWheelButtonReader_SWS_PushButtonStatus_Up_ButtonStatus());
+   CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetWriteData_SteeringWheelButtonReader_SWS_PushButtonStatus_Back_ButtonStatus());
+   CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetWriteData_SteeringWheelButtonReader_SWS_PushButtonStatus_Down_ButtonStatus());
+   CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetWriteData_SteeringWheelButtonReader_SWS_PushButtonStatus_Enter_ButtonStatus());
+   CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetWriteData_SteeringWheelButtonReader_SWS_PushButtonStatus_Home_ButtonStatus());
+   CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetWriteData_SteeringWheelButtonReader_SWS_PushButtonStatus_Left_ButtonStatus());
+   CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetWriteData_SteeringWheelButtonReader_SWS_PushButtonStatus_Right_ButtonStatus());
+   CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetWriteData_SteeringWheelButtonReader_SWS_PushButtonStatus_Up_ButtonStatus());
 }
 
 static void test_down(CuTest* tc)
@@ -153,55 +153,55 @@ static void test_down(CuTest* tc)
    uint16 i;
    test_setup();
    SteeringWheelButtonReader_Run();
-   CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetData_SteeringWheelButtonReader_SWS_PushButtonStatus_Back_ButtonStatus());
-   CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetData_SteeringWheelButtonReader_SWS_PushButtonStatus_Down_ButtonStatus());
-   CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetData_SteeringWheelButtonReader_SWS_PushButtonStatus_Enter_ButtonStatus());
-   CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetData_SteeringWheelButtonReader_SWS_PushButtonStatus_Home_ButtonStatus());
-   CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetData_SteeringWheelButtonReader_SWS_PushButtonStatus_Left_ButtonStatus());
-   CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetData_SteeringWheelButtonReader_SWS_PushButtonStatus_Right_ButtonStatus());
-   CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetData_SteeringWheelButtonReader_SWS_PushButtonStatus_Up_ButtonStatus());
+   CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetWriteData_SteeringWheelButtonReader_SWS_PushButtonStatus_Back_ButtonStatus());
+   CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetWriteData_SteeringWheelButtonReader_SWS_PushButtonStatus_Down_ButtonStatus());
+   CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetWriteData_SteeringWheelButtonReader_SWS_PushButtonStatus_Enter_ButtonStatus());
+   CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetWriteData_SteeringWheelButtonReader_SWS_PushButtonStatus_Home_ButtonStatus());
+   CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetWriteData_SteeringWheelButtonReader_SWS_PushButtonStatus_Left_ButtonStatus());
+   CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetWriteData_SteeringWheelButtonReader_SWS_PushButtonStatus_Right_ButtonStatus());
+   CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetWriteData_SteeringWheelButtonReader_SWS_PushButtonStatus_Up_ButtonStatus());
 
    //Up
    m_bsp_discreteInputState.Down = BspApi_DiscreteState_Active;
    for (i=0;i<DEBOUNCE_LIMIT-1;i++)
    {
       SteeringWheelButtonReader_Run();
-      CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetData_SteeringWheelButtonReader_SWS_PushButtonStatus_Back_ButtonStatus());
-      CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetData_SteeringWheelButtonReader_SWS_PushButtonStatus_Down_ButtonStatus());
-      CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetData_SteeringWheelButtonReader_SWS_PushButtonStatus_Enter_ButtonStatus());
-      CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetData_SteeringWheelButtonReader_SWS_PushButtonStatus_Home_ButtonStatus());
-      CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetData_SteeringWheelButtonReader_SWS_PushButtonStatus_Left_ButtonStatus());
-      CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetData_SteeringWheelButtonReader_SWS_PushButtonStatus_Right_ButtonStatus());
-      CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetData_SteeringWheelButtonReader_SWS_PushButtonStatus_Up_ButtonStatus());
+      CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetWriteData_SteeringWheelButtonReader_SWS_PushButtonStatus_Back_ButtonStatus());
+      CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetWriteData_SteeringWheelButtonReader_SWS_PushButtonStatus_Down_ButtonStatus());
+      CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetWriteData_SteeringWheelButtonReader_SWS_PushButtonStatus_Enter_ButtonStatus());
+      CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetWriteData_SteeringWheelButtonReader_SWS_PushButtonStatus_Home_ButtonStatus());
+      CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetWriteData_SteeringWheelButtonReader_SWS_PushButtonStatus_Left_ButtonStatus());
+      CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetWriteData_SteeringWheelButtonReader_SWS_PushButtonStatus_Right_ButtonStatus());
+      CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetWriteData_SteeringWheelButtonReader_SWS_PushButtonStatus_Up_ButtonStatus());
    }
    SteeringWheelButtonReader_Run();
-   CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetData_SteeringWheelButtonReader_SWS_PushButtonStatus_Back_ButtonStatus());
-   CuAssertUIntEquals(tc, ButtonStatus_Pressed, Rte_GetData_SteeringWheelButtonReader_SWS_PushButtonStatus_Down_ButtonStatus());
-   CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetData_SteeringWheelButtonReader_SWS_PushButtonStatus_Enter_ButtonStatus());
-   CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetData_SteeringWheelButtonReader_SWS_PushButtonStatus_Home_ButtonStatus());
-   CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetData_SteeringWheelButtonReader_SWS_PushButtonStatus_Left_ButtonStatus());
-   CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetData_SteeringWheelButtonReader_SWS_PushButtonStatus_Right_ButtonStatus());
-   CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetData_SteeringWheelButtonReader_SWS_PushButtonStatus_Up_ButtonStatus());
+   CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetWriteData_SteeringWheelButtonReader_SWS_PushButtonStatus_Back_ButtonStatus());
+   CuAssertUIntEquals(tc, ButtonStatus_Pressed, Rte_GetWriteData_SteeringWheelButtonReader_SWS_PushButtonStatus_Down_ButtonStatus());
+   CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetWriteData_SteeringWheelButtonReader_SWS_PushButtonStatus_Enter_ButtonStatus());
+   CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetWriteData_SteeringWheelButtonReader_SWS_PushButtonStatus_Home_ButtonStatus());
+   CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetWriteData_SteeringWheelButtonReader_SWS_PushButtonStatus_Left_ButtonStatus());
+   CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetWriteData_SteeringWheelButtonReader_SWS_PushButtonStatus_Right_ButtonStatus());
+   CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetWriteData_SteeringWheelButtonReader_SWS_PushButtonStatus_Up_ButtonStatus());
    m_bsp_discreteInputState.Down = BspApi_DiscreteState_Inactive;
    for (i=0;i<DEBOUNCE_LIMIT-1;i++)
    {
       SteeringWheelButtonReader_Run();
-      CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetData_SteeringWheelButtonReader_SWS_PushButtonStatus_Back_ButtonStatus());
-      CuAssertUIntEquals(tc, ButtonStatus_Pressed, Rte_GetData_SteeringWheelButtonReader_SWS_PushButtonStatus_Down_ButtonStatus());
-      CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetData_SteeringWheelButtonReader_SWS_PushButtonStatus_Enter_ButtonStatus());
-      CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetData_SteeringWheelButtonReader_SWS_PushButtonStatus_Home_ButtonStatus());
-      CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetData_SteeringWheelButtonReader_SWS_PushButtonStatus_Left_ButtonStatus());
-      CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetData_SteeringWheelButtonReader_SWS_PushButtonStatus_Right_ButtonStatus());
-      CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetData_SteeringWheelButtonReader_SWS_PushButtonStatus_Up_ButtonStatus());
+      CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetWriteData_SteeringWheelButtonReader_SWS_PushButtonStatus_Back_ButtonStatus());
+      CuAssertUIntEquals(tc, ButtonStatus_Pressed, Rte_GetWriteData_SteeringWheelButtonReader_SWS_PushButtonStatus_Down_ButtonStatus());
+      CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetWriteData_SteeringWheelButtonReader_SWS_PushButtonStatus_Enter_ButtonStatus());
+      CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetWriteData_SteeringWheelButtonReader_SWS_PushButtonStatus_Home_ButtonStatus());
+      CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetWriteData_SteeringWheelButtonReader_SWS_PushButtonStatus_Left_ButtonStatus());
+      CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetWriteData_SteeringWheelButtonReader_SWS_PushButtonStatus_Right_ButtonStatus());
+      CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetWriteData_SteeringWheelButtonReader_SWS_PushButtonStatus_Up_ButtonStatus());
    }
    SteeringWheelButtonReader_Run();
-   CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetData_SteeringWheelButtonReader_SWS_PushButtonStatus_Back_ButtonStatus());
-   CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetData_SteeringWheelButtonReader_SWS_PushButtonStatus_Down_ButtonStatus());
-   CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetData_SteeringWheelButtonReader_SWS_PushButtonStatus_Enter_ButtonStatus());
-   CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetData_SteeringWheelButtonReader_SWS_PushButtonStatus_Home_ButtonStatus());
-   CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetData_SteeringWheelButtonReader_SWS_PushButtonStatus_Left_ButtonStatus());
-   CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetData_SteeringWheelButtonReader_SWS_PushButtonStatus_Right_ButtonStatus());
-   CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetData_SteeringWheelButtonReader_SWS_PushButtonStatus_Up_ButtonStatus());
+   CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetWriteData_SteeringWheelButtonReader_SWS_PushButtonStatus_Back_ButtonStatus());
+   CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetWriteData_SteeringWheelButtonReader_SWS_PushButtonStatus_Down_ButtonStatus());
+   CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetWriteData_SteeringWheelButtonReader_SWS_PushButtonStatus_Enter_ButtonStatus());
+   CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetWriteData_SteeringWheelButtonReader_SWS_PushButtonStatus_Home_ButtonStatus());
+   CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetWriteData_SteeringWheelButtonReader_SWS_PushButtonStatus_Left_ButtonStatus());
+   CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetWriteData_SteeringWheelButtonReader_SWS_PushButtonStatus_Right_ButtonStatus());
+   CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetWriteData_SteeringWheelButtonReader_SWS_PushButtonStatus_Up_ButtonStatus());
 }
 
 static void test_left(CuTest* tc)
@@ -209,55 +209,55 @@ static void test_left(CuTest* tc)
    uint16 i;
    test_setup();
    SteeringWheelButtonReader_Run();
-   CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetData_SteeringWheelButtonReader_SWS_PushButtonStatus_Back_ButtonStatus());
-   CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetData_SteeringWheelButtonReader_SWS_PushButtonStatus_Down_ButtonStatus());
-   CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetData_SteeringWheelButtonReader_SWS_PushButtonStatus_Enter_ButtonStatus());
-   CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetData_SteeringWheelButtonReader_SWS_PushButtonStatus_Home_ButtonStatus());
-   CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetData_SteeringWheelButtonReader_SWS_PushButtonStatus_Left_ButtonStatus());
-   CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetData_SteeringWheelButtonReader_SWS_PushButtonStatus_Right_ButtonStatus());
-   CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetData_SteeringWheelButtonReader_SWS_PushButtonStatus_Up_ButtonStatus());
+   CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetWriteData_SteeringWheelButtonReader_SWS_PushButtonStatus_Back_ButtonStatus());
+   CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetWriteData_SteeringWheelButtonReader_SWS_PushButtonStatus_Down_ButtonStatus());
+   CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetWriteData_SteeringWheelButtonReader_SWS_PushButtonStatus_Enter_ButtonStatus());
+   CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetWriteData_SteeringWheelButtonReader_SWS_PushButtonStatus_Home_ButtonStatus());
+   CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetWriteData_SteeringWheelButtonReader_SWS_PushButtonStatus_Left_ButtonStatus());
+   CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetWriteData_SteeringWheelButtonReader_SWS_PushButtonStatus_Right_ButtonStatus());
+   CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetWriteData_SteeringWheelButtonReader_SWS_PushButtonStatus_Up_ButtonStatus());
 
    //Up
    m_bsp_discreteInputState.Left = BspApi_DiscreteState_Active;
    for (i=0;i<DEBOUNCE_LIMIT-1;i++)
    {
       SteeringWheelButtonReader_Run();
-      CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetData_SteeringWheelButtonReader_SWS_PushButtonStatus_Back_ButtonStatus());
-      CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetData_SteeringWheelButtonReader_SWS_PushButtonStatus_Down_ButtonStatus());
-      CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetData_SteeringWheelButtonReader_SWS_PushButtonStatus_Enter_ButtonStatus());
-      CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetData_SteeringWheelButtonReader_SWS_PushButtonStatus_Home_ButtonStatus());
-      CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetData_SteeringWheelButtonReader_SWS_PushButtonStatus_Left_ButtonStatus());
-      CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetData_SteeringWheelButtonReader_SWS_PushButtonStatus_Right_ButtonStatus());
-      CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetData_SteeringWheelButtonReader_SWS_PushButtonStatus_Up_ButtonStatus());
+      CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetWriteData_SteeringWheelButtonReader_SWS_PushButtonStatus_Back_ButtonStatus());
+      CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetWriteData_SteeringWheelButtonReader_SWS_PushButtonStatus_Down_ButtonStatus());
+      CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetWriteData_SteeringWheelButtonReader_SWS_PushButtonStatus_Enter_ButtonStatus());
+      CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetWriteData_SteeringWheelButtonReader_SWS_PushButtonStatus_Home_ButtonStatus());
+      CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetWriteData_SteeringWheelButtonReader_SWS_PushButtonStatus_Left_ButtonStatus());
+      CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetWriteData_SteeringWheelButtonReader_SWS_PushButtonStatus_Right_ButtonStatus());
+      CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetWriteData_SteeringWheelButtonReader_SWS_PushButtonStatus_Up_ButtonStatus());
    }
    SteeringWheelButtonReader_Run();
-   CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetData_SteeringWheelButtonReader_SWS_PushButtonStatus_Back_ButtonStatus());
-   CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetData_SteeringWheelButtonReader_SWS_PushButtonStatus_Down_ButtonStatus());
-   CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetData_SteeringWheelButtonReader_SWS_PushButtonStatus_Enter_ButtonStatus());
-   CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetData_SteeringWheelButtonReader_SWS_PushButtonStatus_Home_ButtonStatus());
-   CuAssertUIntEquals(tc, ButtonStatus_Pressed, Rte_GetData_SteeringWheelButtonReader_SWS_PushButtonStatus_Left_ButtonStatus());
-   CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetData_SteeringWheelButtonReader_SWS_PushButtonStatus_Right_ButtonStatus());
-   CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetData_SteeringWheelButtonReader_SWS_PushButtonStatus_Up_ButtonStatus());
+   CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetWriteData_SteeringWheelButtonReader_SWS_PushButtonStatus_Back_ButtonStatus());
+   CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetWriteData_SteeringWheelButtonReader_SWS_PushButtonStatus_Down_ButtonStatus());
+   CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetWriteData_SteeringWheelButtonReader_SWS_PushButtonStatus_Enter_ButtonStatus());
+   CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetWriteData_SteeringWheelButtonReader_SWS_PushButtonStatus_Home_ButtonStatus());
+   CuAssertUIntEquals(tc, ButtonStatus_Pressed, Rte_GetWriteData_SteeringWheelButtonReader_SWS_PushButtonStatus_Left_ButtonStatus());
+   CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetWriteData_SteeringWheelButtonReader_SWS_PushButtonStatus_Right_ButtonStatus());
+   CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetWriteData_SteeringWheelButtonReader_SWS_PushButtonStatus_Up_ButtonStatus());
    m_bsp_discreteInputState.Left = BspApi_DiscreteState_Inactive;
    for (i=0;i<DEBOUNCE_LIMIT-1;i++)
    {
       SteeringWheelButtonReader_Run();
-      CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetData_SteeringWheelButtonReader_SWS_PushButtonStatus_Back_ButtonStatus());
-      CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetData_SteeringWheelButtonReader_SWS_PushButtonStatus_Down_ButtonStatus());
-      CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetData_SteeringWheelButtonReader_SWS_PushButtonStatus_Enter_ButtonStatus());
-      CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetData_SteeringWheelButtonReader_SWS_PushButtonStatus_Home_ButtonStatus());
-      CuAssertUIntEquals(tc, ButtonStatus_Pressed, Rte_GetData_SteeringWheelButtonReader_SWS_PushButtonStatus_Left_ButtonStatus());
-      CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetData_SteeringWheelButtonReader_SWS_PushButtonStatus_Right_ButtonStatus());
-      CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetData_SteeringWheelButtonReader_SWS_PushButtonStatus_Up_ButtonStatus());
+      CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetWriteData_SteeringWheelButtonReader_SWS_PushButtonStatus_Back_ButtonStatus());
+      CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetWriteData_SteeringWheelButtonReader_SWS_PushButtonStatus_Down_ButtonStatus());
+      CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetWriteData_SteeringWheelButtonReader_SWS_PushButtonStatus_Enter_ButtonStatus());
+      CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetWriteData_SteeringWheelButtonReader_SWS_PushButtonStatus_Home_ButtonStatus());
+      CuAssertUIntEquals(tc, ButtonStatus_Pressed, Rte_GetWriteData_SteeringWheelButtonReader_SWS_PushButtonStatus_Left_ButtonStatus());
+      CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetWriteData_SteeringWheelButtonReader_SWS_PushButtonStatus_Right_ButtonStatus());
+      CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetWriteData_SteeringWheelButtonReader_SWS_PushButtonStatus_Up_ButtonStatus());
    }
    SteeringWheelButtonReader_Run();
-   CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetData_SteeringWheelButtonReader_SWS_PushButtonStatus_Back_ButtonStatus());
-   CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetData_SteeringWheelButtonReader_SWS_PushButtonStatus_Down_ButtonStatus());
-   CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetData_SteeringWheelButtonReader_SWS_PushButtonStatus_Enter_ButtonStatus());
-   CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetData_SteeringWheelButtonReader_SWS_PushButtonStatus_Home_ButtonStatus());
-   CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetData_SteeringWheelButtonReader_SWS_PushButtonStatus_Left_ButtonStatus());
-   CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetData_SteeringWheelButtonReader_SWS_PushButtonStatus_Right_ButtonStatus());
-   CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetData_SteeringWheelButtonReader_SWS_PushButtonStatus_Up_ButtonStatus());
+   CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetWriteData_SteeringWheelButtonReader_SWS_PushButtonStatus_Back_ButtonStatus());
+   CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetWriteData_SteeringWheelButtonReader_SWS_PushButtonStatus_Down_ButtonStatus());
+   CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetWriteData_SteeringWheelButtonReader_SWS_PushButtonStatus_Enter_ButtonStatus());
+   CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetWriteData_SteeringWheelButtonReader_SWS_PushButtonStatus_Home_ButtonStatus());
+   CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetWriteData_SteeringWheelButtonReader_SWS_PushButtonStatus_Left_ButtonStatus());
+   CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetWriteData_SteeringWheelButtonReader_SWS_PushButtonStatus_Right_ButtonStatus());
+   CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetWriteData_SteeringWheelButtonReader_SWS_PushButtonStatus_Up_ButtonStatus());
 }
 
 static void test_right(CuTest* tc)
@@ -265,55 +265,55 @@ static void test_right(CuTest* tc)
    uint16 i;
    test_setup();
    SteeringWheelButtonReader_Run();
-   CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetData_SteeringWheelButtonReader_SWS_PushButtonStatus_Back_ButtonStatus());
-   CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetData_SteeringWheelButtonReader_SWS_PushButtonStatus_Down_ButtonStatus());
-   CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetData_SteeringWheelButtonReader_SWS_PushButtonStatus_Enter_ButtonStatus());
-   CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetData_SteeringWheelButtonReader_SWS_PushButtonStatus_Home_ButtonStatus());
-   CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetData_SteeringWheelButtonReader_SWS_PushButtonStatus_Left_ButtonStatus());
-   CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetData_SteeringWheelButtonReader_SWS_PushButtonStatus_Right_ButtonStatus());
-   CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetData_SteeringWheelButtonReader_SWS_PushButtonStatus_Up_ButtonStatus());
+   CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetWriteData_SteeringWheelButtonReader_SWS_PushButtonStatus_Back_ButtonStatus());
+   CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetWriteData_SteeringWheelButtonReader_SWS_PushButtonStatus_Down_ButtonStatus());
+   CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetWriteData_SteeringWheelButtonReader_SWS_PushButtonStatus_Enter_ButtonStatus());
+   CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetWriteData_SteeringWheelButtonReader_SWS_PushButtonStatus_Home_ButtonStatus());
+   CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetWriteData_SteeringWheelButtonReader_SWS_PushButtonStatus_Left_ButtonStatus());
+   CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetWriteData_SteeringWheelButtonReader_SWS_PushButtonStatus_Right_ButtonStatus());
+   CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetWriteData_SteeringWheelButtonReader_SWS_PushButtonStatus_Up_ButtonStatus());
 
    //Up
    m_bsp_discreteInputState.Right = BspApi_DiscreteState_Active;
    for (i=0;i<DEBOUNCE_LIMIT-1;i++)
    {
       SteeringWheelButtonReader_Run();
-      CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetData_SteeringWheelButtonReader_SWS_PushButtonStatus_Back_ButtonStatus());
-      CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetData_SteeringWheelButtonReader_SWS_PushButtonStatus_Down_ButtonStatus());
-      CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetData_SteeringWheelButtonReader_SWS_PushButtonStatus_Enter_ButtonStatus());
-      CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetData_SteeringWheelButtonReader_SWS_PushButtonStatus_Home_ButtonStatus());
-      CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetData_SteeringWheelButtonReader_SWS_PushButtonStatus_Left_ButtonStatus());
-      CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetData_SteeringWheelButtonReader_SWS_PushButtonStatus_Right_ButtonStatus());
-      CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetData_SteeringWheelButtonReader_SWS_PushButtonStatus_Up_ButtonStatus());
+      CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetWriteData_SteeringWheelButtonReader_SWS_PushButtonStatus_Back_ButtonStatus());
+      CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetWriteData_SteeringWheelButtonReader_SWS_PushButtonStatus_Down_ButtonStatus());
+      CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetWriteData_SteeringWheelButtonReader_SWS_PushButtonStatus_Enter_ButtonStatus());
+      CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetWriteData_SteeringWheelButtonReader_SWS_PushButtonStatus_Home_ButtonStatus());
+      CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetWriteData_SteeringWheelButtonReader_SWS_PushButtonStatus_Left_ButtonStatus());
+      CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetWriteData_SteeringWheelButtonReader_SWS_PushButtonStatus_Right_ButtonStatus());
+      CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetWriteData_SteeringWheelButtonReader_SWS_PushButtonStatus_Up_ButtonStatus());
    }
    SteeringWheelButtonReader_Run();
-   CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetData_SteeringWheelButtonReader_SWS_PushButtonStatus_Back_ButtonStatus());
-   CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetData_SteeringWheelButtonReader_SWS_PushButtonStatus_Down_ButtonStatus());
-   CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetData_SteeringWheelButtonReader_SWS_PushButtonStatus_Enter_ButtonStatus());
-   CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetData_SteeringWheelButtonReader_SWS_PushButtonStatus_Home_ButtonStatus());
-   CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetData_SteeringWheelButtonReader_SWS_PushButtonStatus_Left_ButtonStatus());
-   CuAssertUIntEquals(tc, ButtonStatus_Pressed, Rte_GetData_SteeringWheelButtonReader_SWS_PushButtonStatus_Right_ButtonStatus());
-   CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetData_SteeringWheelButtonReader_SWS_PushButtonStatus_Up_ButtonStatus());
+   CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetWriteData_SteeringWheelButtonReader_SWS_PushButtonStatus_Back_ButtonStatus());
+   CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetWriteData_SteeringWheelButtonReader_SWS_PushButtonStatus_Down_ButtonStatus());
+   CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetWriteData_SteeringWheelButtonReader_SWS_PushButtonStatus_Enter_ButtonStatus());
+   CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetWriteData_SteeringWheelButtonReader_SWS_PushButtonStatus_Home_ButtonStatus());
+   CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetWriteData_SteeringWheelButtonReader_SWS_PushButtonStatus_Left_ButtonStatus());
+   CuAssertUIntEquals(tc, ButtonStatus_Pressed, Rte_GetWriteData_SteeringWheelButtonReader_SWS_PushButtonStatus_Right_ButtonStatus());
+   CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetWriteData_SteeringWheelButtonReader_SWS_PushButtonStatus_Up_ButtonStatus());
    m_bsp_discreteInputState.Right = BspApi_DiscreteState_Inactive;
    for (i=0;i<DEBOUNCE_LIMIT-1;i++)
    {
       SteeringWheelButtonReader_Run();
-      CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetData_SteeringWheelButtonReader_SWS_PushButtonStatus_Back_ButtonStatus());
-      CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetData_SteeringWheelButtonReader_SWS_PushButtonStatus_Down_ButtonStatus());
-      CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetData_SteeringWheelButtonReader_SWS_PushButtonStatus_Enter_ButtonStatus());
-      CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetData_SteeringWheelButtonReader_SWS_PushButtonStatus_Home_ButtonStatus());
-      CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetData_SteeringWheelButtonReader_SWS_PushButtonStatus_Left_ButtonStatus());
-      CuAssertUIntEquals(tc, ButtonStatus_Pressed, Rte_GetData_SteeringWheelButtonReader_SWS_PushButtonStatus_Right_ButtonStatus());
-      CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetData_SteeringWheelButtonReader_SWS_PushButtonStatus_Up_ButtonStatus());
+      CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetWriteData_SteeringWheelButtonReader_SWS_PushButtonStatus_Back_ButtonStatus());
+      CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetWriteData_SteeringWheelButtonReader_SWS_PushButtonStatus_Down_ButtonStatus());
+      CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetWriteData_SteeringWheelButtonReader_SWS_PushButtonStatus_Enter_ButtonStatus());
+      CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetWriteData_SteeringWheelButtonReader_SWS_PushButtonStatus_Home_ButtonStatus());
+      CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetWriteData_SteeringWheelButtonReader_SWS_PushButtonStatus_Left_ButtonStatus());
+      CuAssertUIntEquals(tc, ButtonStatus_Pressed, Rte_GetWriteData_SteeringWheelButtonReader_SWS_PushButtonStatus_Right_ButtonStatus());
+      CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetWriteData_SteeringWheelButtonReader_SWS_PushButtonStatus_Up_ButtonStatus());
    }
    SteeringWheelButtonReader_Run();
-   CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetData_SteeringWheelButtonReader_SWS_PushButtonStatus_Back_ButtonStatus());
-   CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetData_SteeringWheelButtonReader_SWS_PushButtonStatus_Down_ButtonStatus());
-   CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetData_SteeringWheelButtonReader_SWS_PushButtonStatus_Enter_ButtonStatus());
-   CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetData_SteeringWheelButtonReader_SWS_PushButtonStatus_Home_ButtonStatus());
-   CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetData_SteeringWheelButtonReader_SWS_PushButtonStatus_Left_ButtonStatus());
-   CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetData_SteeringWheelButtonReader_SWS_PushButtonStatus_Right_ButtonStatus());
-   CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetData_SteeringWheelButtonReader_SWS_PushButtonStatus_Up_ButtonStatus());
+   CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetWriteData_SteeringWheelButtonReader_SWS_PushButtonStatus_Back_ButtonStatus());
+   CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetWriteData_SteeringWheelButtonReader_SWS_PushButtonStatus_Down_ButtonStatus());
+   CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetWriteData_SteeringWheelButtonReader_SWS_PushButtonStatus_Enter_ButtonStatus());
+   CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetWriteData_SteeringWheelButtonReader_SWS_PushButtonStatus_Home_ButtonStatus());
+   CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetWriteData_SteeringWheelButtonReader_SWS_PushButtonStatus_Left_ButtonStatus());
+   CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetWriteData_SteeringWheelButtonReader_SWS_PushButtonStatus_Right_ButtonStatus());
+   CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetWriteData_SteeringWheelButtonReader_SWS_PushButtonStatus_Up_ButtonStatus());
 }
 
 static void test_back(CuTest* tc)
@@ -321,55 +321,55 @@ static void test_back(CuTest* tc)
    uint16 i;
    test_setup();
    SteeringWheelButtonReader_Run();
-   CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetData_SteeringWheelButtonReader_SWS_PushButtonStatus_Back_ButtonStatus());
-   CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetData_SteeringWheelButtonReader_SWS_PushButtonStatus_Down_ButtonStatus());
-   CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetData_SteeringWheelButtonReader_SWS_PushButtonStatus_Enter_ButtonStatus());
-   CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetData_SteeringWheelButtonReader_SWS_PushButtonStatus_Home_ButtonStatus());
-   CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetData_SteeringWheelButtonReader_SWS_PushButtonStatus_Left_ButtonStatus());
-   CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetData_SteeringWheelButtonReader_SWS_PushButtonStatus_Right_ButtonStatus());
-   CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetData_SteeringWheelButtonReader_SWS_PushButtonStatus_Up_ButtonStatus());
+   CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetWriteData_SteeringWheelButtonReader_SWS_PushButtonStatus_Back_ButtonStatus());
+   CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetWriteData_SteeringWheelButtonReader_SWS_PushButtonStatus_Down_ButtonStatus());
+   CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetWriteData_SteeringWheelButtonReader_SWS_PushButtonStatus_Enter_ButtonStatus());
+   CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetWriteData_SteeringWheelButtonReader_SWS_PushButtonStatus_Home_ButtonStatus());
+   CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetWriteData_SteeringWheelButtonReader_SWS_PushButtonStatus_Left_ButtonStatus());
+   CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetWriteData_SteeringWheelButtonReader_SWS_PushButtonStatus_Right_ButtonStatus());
+   CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetWriteData_SteeringWheelButtonReader_SWS_PushButtonStatus_Up_ButtonStatus());
 
    //Up
    m_bsp_discreteInputState.Back = BspApi_DiscreteState_Active;
    for (i=0;i<DEBOUNCE_LIMIT-1;i++)
    {
       SteeringWheelButtonReader_Run();
-      CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetData_SteeringWheelButtonReader_SWS_PushButtonStatus_Back_ButtonStatus());
-      CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetData_SteeringWheelButtonReader_SWS_PushButtonStatus_Down_ButtonStatus());
-      CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetData_SteeringWheelButtonReader_SWS_PushButtonStatus_Enter_ButtonStatus());
-      CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetData_SteeringWheelButtonReader_SWS_PushButtonStatus_Home_ButtonStatus());
-      CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetData_SteeringWheelButtonReader_SWS_PushButtonStatus_Left_ButtonStatus());
-      CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetData_SteeringWheelButtonReader_SWS_PushButtonStatus_Right_ButtonStatus());
-      CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetData_SteeringWheelButtonReader_SWS_PushButtonStatus_Up_ButtonStatus());
+      CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetWriteData_SteeringWheelButtonReader_SWS_PushButtonStatus_Back_ButtonStatus());
+      CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetWriteData_SteeringWheelButtonReader_SWS_PushButtonStatus_Down_ButtonStatus());
+      CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetWriteData_SteeringWheelButtonReader_SWS_PushButtonStatus_Enter_ButtonStatus());
+      CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetWriteData_SteeringWheelButtonReader_SWS_PushButtonStatus_Home_ButtonStatus());
+      CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetWriteData_SteeringWheelButtonReader_SWS_PushButtonStatus_Left_ButtonStatus());
+      CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetWriteData_SteeringWheelButtonReader_SWS_PushButtonStatus_Right_ButtonStatus());
+      CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetWriteData_SteeringWheelButtonReader_SWS_PushButtonStatus_Up_ButtonStatus());
    }
    SteeringWheelButtonReader_Run();
-   CuAssertUIntEquals(tc, ButtonStatus_Pressed, Rte_GetData_SteeringWheelButtonReader_SWS_PushButtonStatus_Back_ButtonStatus());
-   CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetData_SteeringWheelButtonReader_SWS_PushButtonStatus_Down_ButtonStatus());
-   CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetData_SteeringWheelButtonReader_SWS_PushButtonStatus_Enter_ButtonStatus());
-   CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetData_SteeringWheelButtonReader_SWS_PushButtonStatus_Home_ButtonStatus());
-   CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetData_SteeringWheelButtonReader_SWS_PushButtonStatus_Left_ButtonStatus());
-   CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetData_SteeringWheelButtonReader_SWS_PushButtonStatus_Right_ButtonStatus());
-   CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetData_SteeringWheelButtonReader_SWS_PushButtonStatus_Up_ButtonStatus());
+   CuAssertUIntEquals(tc, ButtonStatus_Pressed, Rte_GetWriteData_SteeringWheelButtonReader_SWS_PushButtonStatus_Back_ButtonStatus());
+   CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetWriteData_SteeringWheelButtonReader_SWS_PushButtonStatus_Down_ButtonStatus());
+   CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetWriteData_SteeringWheelButtonReader_SWS_PushButtonStatus_Enter_ButtonStatus());
+   CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetWriteData_SteeringWheelButtonReader_SWS_PushButtonStatus_Home_ButtonStatus());
+   CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetWriteData_SteeringWheelButtonReader_SWS_PushButtonStatus_Left_ButtonStatus());
+   CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetWriteData_SteeringWheelButtonReader_SWS_PushButtonStatus_Right_ButtonStatus());
+   CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetWriteData_SteeringWheelButtonReader_SWS_PushButtonStatus_Up_ButtonStatus());
    m_bsp_discreteInputState.Back = BspApi_DiscreteState_Inactive;
    for (i=0;i<DEBOUNCE_LIMIT-1;i++)
    {
       SteeringWheelButtonReader_Run();
-      CuAssertUIntEquals(tc, ButtonStatus_Pressed, Rte_GetData_SteeringWheelButtonReader_SWS_PushButtonStatus_Back_ButtonStatus());
-      CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetData_SteeringWheelButtonReader_SWS_PushButtonStatus_Down_ButtonStatus());
-      CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetData_SteeringWheelButtonReader_SWS_PushButtonStatus_Enter_ButtonStatus());
-      CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetData_SteeringWheelButtonReader_SWS_PushButtonStatus_Home_ButtonStatus());
-      CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetData_SteeringWheelButtonReader_SWS_PushButtonStatus_Left_ButtonStatus());
-      CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetData_SteeringWheelButtonReader_SWS_PushButtonStatus_Right_ButtonStatus());
-      CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetData_SteeringWheelButtonReader_SWS_PushButtonStatus_Up_ButtonStatus());
+      CuAssertUIntEquals(tc, ButtonStatus_Pressed, Rte_GetWriteData_SteeringWheelButtonReader_SWS_PushButtonStatus_Back_ButtonStatus());
+      CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetWriteData_SteeringWheelButtonReader_SWS_PushButtonStatus_Down_ButtonStatus());
+      CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetWriteData_SteeringWheelButtonReader_SWS_PushButtonStatus_Enter_ButtonStatus());
+      CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetWriteData_SteeringWheelButtonReader_SWS_PushButtonStatus_Home_ButtonStatus());
+      CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetWriteData_SteeringWheelButtonReader_SWS_PushButtonStatus_Left_ButtonStatus());
+      CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetWriteData_SteeringWheelButtonReader_SWS_PushButtonStatus_Right_ButtonStatus());
+      CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetWriteData_SteeringWheelButtonReader_SWS_PushButtonStatus_Up_ButtonStatus());
    }
    SteeringWheelButtonReader_Run();
-   CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetData_SteeringWheelButtonReader_SWS_PushButtonStatus_Back_ButtonStatus());
-   CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetData_SteeringWheelButtonReader_SWS_PushButtonStatus_Down_ButtonStatus());
-   CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetData_SteeringWheelButtonReader_SWS_PushButtonStatus_Enter_ButtonStatus());
-   CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetData_SteeringWheelButtonReader_SWS_PushButtonStatus_Home_ButtonStatus());
-   CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetData_SteeringWheelButtonReader_SWS_PushButtonStatus_Left_ButtonStatus());
-   CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetData_SteeringWheelButtonReader_SWS_PushButtonStatus_Right_ButtonStatus());
-   CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetData_SteeringWheelButtonReader_SWS_PushButtonStatus_Up_ButtonStatus());
+   CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetWriteData_SteeringWheelButtonReader_SWS_PushButtonStatus_Back_ButtonStatus());
+   CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetWriteData_SteeringWheelButtonReader_SWS_PushButtonStatus_Down_ButtonStatus());
+   CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetWriteData_SteeringWheelButtonReader_SWS_PushButtonStatus_Enter_ButtonStatus());
+   CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetWriteData_SteeringWheelButtonReader_SWS_PushButtonStatus_Home_ButtonStatus());
+   CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetWriteData_SteeringWheelButtonReader_SWS_PushButtonStatus_Left_ButtonStatus());
+   CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetWriteData_SteeringWheelButtonReader_SWS_PushButtonStatus_Right_ButtonStatus());
+   CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetWriteData_SteeringWheelButtonReader_SWS_PushButtonStatus_Up_ButtonStatus());
 }
 
 static void test_enter(CuTest* tc)
@@ -377,55 +377,55 @@ static void test_enter(CuTest* tc)
    uint16 i;
    test_setup();
    SteeringWheelButtonReader_Run();
-   CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetData_SteeringWheelButtonReader_SWS_PushButtonStatus_Back_ButtonStatus());
-   CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetData_SteeringWheelButtonReader_SWS_PushButtonStatus_Down_ButtonStatus());
-   CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetData_SteeringWheelButtonReader_SWS_PushButtonStatus_Enter_ButtonStatus());
-   CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetData_SteeringWheelButtonReader_SWS_PushButtonStatus_Home_ButtonStatus());
-   CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetData_SteeringWheelButtonReader_SWS_PushButtonStatus_Left_ButtonStatus());
-   CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetData_SteeringWheelButtonReader_SWS_PushButtonStatus_Right_ButtonStatus());
-   CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetData_SteeringWheelButtonReader_SWS_PushButtonStatus_Up_ButtonStatus());
+   CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetWriteData_SteeringWheelButtonReader_SWS_PushButtonStatus_Back_ButtonStatus());
+   CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetWriteData_SteeringWheelButtonReader_SWS_PushButtonStatus_Down_ButtonStatus());
+   CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetWriteData_SteeringWheelButtonReader_SWS_PushButtonStatus_Enter_ButtonStatus());
+   CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetWriteData_SteeringWheelButtonReader_SWS_PushButtonStatus_Home_ButtonStatus());
+   CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetWriteData_SteeringWheelButtonReader_SWS_PushButtonStatus_Left_ButtonStatus());
+   CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetWriteData_SteeringWheelButtonReader_SWS_PushButtonStatus_Right_ButtonStatus());
+   CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetWriteData_SteeringWheelButtonReader_SWS_PushButtonStatus_Up_ButtonStatus());
 
    //Up
    m_bsp_discreteInputState.Enter = BspApi_DiscreteState_Active;
    for (i=0;i<DEBOUNCE_LIMIT-1;i++)
    {
       SteeringWheelButtonReader_Run();
-      CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetData_SteeringWheelButtonReader_SWS_PushButtonStatus_Back_ButtonStatus());
-      CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetData_SteeringWheelButtonReader_SWS_PushButtonStatus_Down_ButtonStatus());
-      CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetData_SteeringWheelButtonReader_SWS_PushButtonStatus_Enter_ButtonStatus());
-      CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetData_SteeringWheelButtonReader_SWS_PushButtonStatus_Home_ButtonStatus());
-      CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetData_SteeringWheelButtonReader_SWS_PushButtonStatus_Left_ButtonStatus());
-      CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetData_SteeringWheelButtonReader_SWS_PushButtonStatus_Right_ButtonStatus());
-      CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetData_SteeringWheelButtonReader_SWS_PushButtonStatus_Up_ButtonStatus());
+      CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetWriteData_SteeringWheelButtonReader_SWS_PushButtonStatus_Back_ButtonStatus());
+      CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetWriteData_SteeringWheelButtonReader_SWS_PushButtonStatus_Down_ButtonStatus());
+      CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetWriteData_SteeringWheelButtonReader_SWS_PushButtonStatus_Enter_ButtonStatus());
+      CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetWriteData_SteeringWheelButtonReader_SWS_PushButtonStatus_Home_ButtonStatus());
+      CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetWriteData_SteeringWheelButtonReader_SWS_PushButtonStatus_Left_ButtonStatus());
+      CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetWriteData_SteeringWheelButtonReader_SWS_PushButtonStatus_Right_ButtonStatus());
+      CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetWriteData_SteeringWheelButtonReader_SWS_PushButtonStatus_Up_ButtonStatus());
    }
    SteeringWheelButtonReader_Run();
-   CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetData_SteeringWheelButtonReader_SWS_PushButtonStatus_Back_ButtonStatus());
-   CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetData_SteeringWheelButtonReader_SWS_PushButtonStatus_Down_ButtonStatus());
-   CuAssertUIntEquals(tc, ButtonStatus_Pressed, Rte_GetData_SteeringWheelButtonReader_SWS_PushButtonStatus_Enter_ButtonStatus());
-   CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetData_SteeringWheelButtonReader_SWS_PushButtonStatus_Home_ButtonStatus());
-   CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetData_SteeringWheelButtonReader_SWS_PushButtonStatus_Left_ButtonStatus());
-   CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetData_SteeringWheelButtonReader_SWS_PushButtonStatus_Right_ButtonStatus());
-   CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetData_SteeringWheelButtonReader_SWS_PushButtonStatus_Up_ButtonStatus());
+   CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetWriteData_SteeringWheelButtonReader_SWS_PushButtonStatus_Back_ButtonStatus());
+   CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetWriteData_SteeringWheelButtonReader_SWS_PushButtonStatus_Down_ButtonStatus());
+   CuAssertUIntEquals(tc, ButtonStatus_Pressed, Rte_GetWriteData_SteeringWheelButtonReader_SWS_PushButtonStatus_Enter_ButtonStatus());
+   CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetWriteData_SteeringWheelButtonReader_SWS_PushButtonStatus_Home_ButtonStatus());
+   CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetWriteData_SteeringWheelButtonReader_SWS_PushButtonStatus_Left_ButtonStatus());
+   CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetWriteData_SteeringWheelButtonReader_SWS_PushButtonStatus_Right_ButtonStatus());
+   CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetWriteData_SteeringWheelButtonReader_SWS_PushButtonStatus_Up_ButtonStatus());
    m_bsp_discreteInputState.Enter = BspApi_DiscreteState_Inactive;
    for (i=0;i<DEBOUNCE_LIMIT-1;i++)
    {
       SteeringWheelButtonReader_Run();
-      CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetData_SteeringWheelButtonReader_SWS_PushButtonStatus_Back_ButtonStatus());
-      CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetData_SteeringWheelButtonReader_SWS_PushButtonStatus_Down_ButtonStatus());
-      CuAssertUIntEquals(tc, ButtonStatus_Pressed, Rte_GetData_SteeringWheelButtonReader_SWS_PushButtonStatus_Enter_ButtonStatus());
-      CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetData_SteeringWheelButtonReader_SWS_PushButtonStatus_Home_ButtonStatus());
-      CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetData_SteeringWheelButtonReader_SWS_PushButtonStatus_Left_ButtonStatus());
-      CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetData_SteeringWheelButtonReader_SWS_PushButtonStatus_Right_ButtonStatus());
-      CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetData_SteeringWheelButtonReader_SWS_PushButtonStatus_Up_ButtonStatus());
+      CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetWriteData_SteeringWheelButtonReader_SWS_PushButtonStatus_Back_ButtonStatus());
+      CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetWriteData_SteeringWheelButtonReader_SWS_PushButtonStatus_Down_ButtonStatus());
+      CuAssertUIntEquals(tc, ButtonStatus_Pressed, Rte_GetWriteData_SteeringWheelButtonReader_SWS_PushButtonStatus_Enter_ButtonStatus());
+      CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetWriteData_SteeringWheelButtonReader_SWS_PushButtonStatus_Home_ButtonStatus());
+      CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetWriteData_SteeringWheelButtonReader_SWS_PushButtonStatus_Left_ButtonStatus());
+      CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetWriteData_SteeringWheelButtonReader_SWS_PushButtonStatus_Right_ButtonStatus());
+      CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetWriteData_SteeringWheelButtonReader_SWS_PushButtonStatus_Up_ButtonStatus());
    }
    SteeringWheelButtonReader_Run();
-   CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetData_SteeringWheelButtonReader_SWS_PushButtonStatus_Back_ButtonStatus());
-   CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetData_SteeringWheelButtonReader_SWS_PushButtonStatus_Down_ButtonStatus());
-   CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetData_SteeringWheelButtonReader_SWS_PushButtonStatus_Enter_ButtonStatus());
-   CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetData_SteeringWheelButtonReader_SWS_PushButtonStatus_Home_ButtonStatus());
-   CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetData_SteeringWheelButtonReader_SWS_PushButtonStatus_Left_ButtonStatus());
-   CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetData_SteeringWheelButtonReader_SWS_PushButtonStatus_Right_ButtonStatus());
-   CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetData_SteeringWheelButtonReader_SWS_PushButtonStatus_Up_ButtonStatus());
+   CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetWriteData_SteeringWheelButtonReader_SWS_PushButtonStatus_Back_ButtonStatus());
+   CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetWriteData_SteeringWheelButtonReader_SWS_PushButtonStatus_Down_ButtonStatus());
+   CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetWriteData_SteeringWheelButtonReader_SWS_PushButtonStatus_Enter_ButtonStatus());
+   CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetWriteData_SteeringWheelButtonReader_SWS_PushButtonStatus_Home_ButtonStatus());
+   CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetWriteData_SteeringWheelButtonReader_SWS_PushButtonStatus_Left_ButtonStatus());
+   CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetWriteData_SteeringWheelButtonReader_SWS_PushButtonStatus_Right_ButtonStatus());
+   CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetWriteData_SteeringWheelButtonReader_SWS_PushButtonStatus_Up_ButtonStatus());
 }
 
 static void test_home(CuTest* tc)
@@ -433,55 +433,55 @@ static void test_home(CuTest* tc)
    uint16 i;
    test_setup();
    SteeringWheelButtonReader_Run();
-   CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetData_SteeringWheelButtonReader_SWS_PushButtonStatus_Back_ButtonStatus());
-   CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetData_SteeringWheelButtonReader_SWS_PushButtonStatus_Down_ButtonStatus());
-   CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetData_SteeringWheelButtonReader_SWS_PushButtonStatus_Enter_ButtonStatus());
-   CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetData_SteeringWheelButtonReader_SWS_PushButtonStatus_Home_ButtonStatus());
-   CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetData_SteeringWheelButtonReader_SWS_PushButtonStatus_Left_ButtonStatus());
-   CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetData_SteeringWheelButtonReader_SWS_PushButtonStatus_Right_ButtonStatus());
-   CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetData_SteeringWheelButtonReader_SWS_PushButtonStatus_Up_ButtonStatus());
+   CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetWriteData_SteeringWheelButtonReader_SWS_PushButtonStatus_Back_ButtonStatus());
+   CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetWriteData_SteeringWheelButtonReader_SWS_PushButtonStatus_Down_ButtonStatus());
+   CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetWriteData_SteeringWheelButtonReader_SWS_PushButtonStatus_Enter_ButtonStatus());
+   CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetWriteData_SteeringWheelButtonReader_SWS_PushButtonStatus_Home_ButtonStatus());
+   CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetWriteData_SteeringWheelButtonReader_SWS_PushButtonStatus_Left_ButtonStatus());
+   CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetWriteData_SteeringWheelButtonReader_SWS_PushButtonStatus_Right_ButtonStatus());
+   CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetWriteData_SteeringWheelButtonReader_SWS_PushButtonStatus_Up_ButtonStatus());
 
    //Up
    m_bsp_discreteInputState.Home = BspApi_DiscreteState_Active;
    for (i=0;i<DEBOUNCE_LIMIT-1;i++)
    {
       SteeringWheelButtonReader_Run();
-      CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetData_SteeringWheelButtonReader_SWS_PushButtonStatus_Back_ButtonStatus());
-      CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetData_SteeringWheelButtonReader_SWS_PushButtonStatus_Down_ButtonStatus());
-      CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetData_SteeringWheelButtonReader_SWS_PushButtonStatus_Enter_ButtonStatus());
-      CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetData_SteeringWheelButtonReader_SWS_PushButtonStatus_Home_ButtonStatus());
-      CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetData_SteeringWheelButtonReader_SWS_PushButtonStatus_Left_ButtonStatus());
-      CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetData_SteeringWheelButtonReader_SWS_PushButtonStatus_Right_ButtonStatus());
-      CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetData_SteeringWheelButtonReader_SWS_PushButtonStatus_Up_ButtonStatus());
+      CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetWriteData_SteeringWheelButtonReader_SWS_PushButtonStatus_Back_ButtonStatus());
+      CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetWriteData_SteeringWheelButtonReader_SWS_PushButtonStatus_Down_ButtonStatus());
+      CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetWriteData_SteeringWheelButtonReader_SWS_PushButtonStatus_Enter_ButtonStatus());
+      CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetWriteData_SteeringWheelButtonReader_SWS_PushButtonStatus_Home_ButtonStatus());
+      CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetWriteData_SteeringWheelButtonReader_SWS_PushButtonStatus_Left_ButtonStatus());
+      CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetWriteData_SteeringWheelButtonReader_SWS_PushButtonStatus_Right_ButtonStatus());
+      CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetWriteData_SteeringWheelButtonReader_SWS_PushButtonStatus_Up_ButtonStatus());
    }
    SteeringWheelButtonReader_Run();
-   CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetData_SteeringWheelButtonReader_SWS_PushButtonStatus_Back_ButtonStatus());
-   CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetData_SteeringWheelButtonReader_SWS_PushButtonStatus_Down_ButtonStatus());
-   CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetData_SteeringWheelButtonReader_SWS_PushButtonStatus_Enter_ButtonStatus());
-   CuAssertUIntEquals(tc, ButtonStatus_Pressed, Rte_GetData_SteeringWheelButtonReader_SWS_PushButtonStatus_Home_ButtonStatus());
-   CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetData_SteeringWheelButtonReader_SWS_PushButtonStatus_Left_ButtonStatus());
-   CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetData_SteeringWheelButtonReader_SWS_PushButtonStatus_Right_ButtonStatus());
-   CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetData_SteeringWheelButtonReader_SWS_PushButtonStatus_Up_ButtonStatus());
-   m_bsp_discreteInputState.Enter = BspApi_DiscreteState_Inactive;
+   CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetWriteData_SteeringWheelButtonReader_SWS_PushButtonStatus_Back_ButtonStatus());
+   CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetWriteData_SteeringWheelButtonReader_SWS_PushButtonStatus_Down_ButtonStatus());
+   CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetWriteData_SteeringWheelButtonReader_SWS_PushButtonStatus_Enter_ButtonStatus());
+   CuAssertUIntEquals(tc, ButtonStatus_Pressed, Rte_GetWriteData_SteeringWheelButtonReader_SWS_PushButtonStatus_Home_ButtonStatus());
+   CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetWriteData_SteeringWheelButtonReader_SWS_PushButtonStatus_Left_ButtonStatus());
+   CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetWriteData_SteeringWheelButtonReader_SWS_PushButtonStatus_Right_ButtonStatus());
+   CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetWriteData_SteeringWheelButtonReader_SWS_PushButtonStatus_Up_ButtonStatus());
+   m_bsp_discreteInputState.Home = BspApi_DiscreteState_Inactive;
    for (i=0;i<DEBOUNCE_LIMIT-1;i++)
    {
       SteeringWheelButtonReader_Run();
-      CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetData_SteeringWheelButtonReader_SWS_PushButtonStatus_Back_ButtonStatus());
-      CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetData_SteeringWheelButtonReader_SWS_PushButtonStatus_Down_ButtonStatus());
-      CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetData_SteeringWheelButtonReader_SWS_PushButtonStatus_Enter_ButtonStatus());
-      CuAssertUIntEquals(tc, ButtonStatus_Pressed, Rte_GetData_SteeringWheelButtonReader_SWS_PushButtonStatus_Home_ButtonStatus());
-      CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetData_SteeringWheelButtonReader_SWS_PushButtonStatus_Left_ButtonStatus());
-      CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetData_SteeringWheelButtonReader_SWS_PushButtonStatus_Right_ButtonStatus());
-      CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetData_SteeringWheelButtonReader_SWS_PushButtonStatus_Up_ButtonStatus());
+      CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetWriteData_SteeringWheelButtonReader_SWS_PushButtonStatus_Back_ButtonStatus());
+      CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetWriteData_SteeringWheelButtonReader_SWS_PushButtonStatus_Down_ButtonStatus());
+      CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetWriteData_SteeringWheelButtonReader_SWS_PushButtonStatus_Enter_ButtonStatus());
+      CuAssertUIntEquals(tc, ButtonStatus_Pressed, Rte_GetWriteData_SteeringWheelButtonReader_SWS_PushButtonStatus_Home_ButtonStatus());
+      CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetWriteData_SteeringWheelButtonReader_SWS_PushButtonStatus_Left_ButtonStatus());
+      CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetWriteData_SteeringWheelButtonReader_SWS_PushButtonStatus_Right_ButtonStatus());
+      CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetWriteData_SteeringWheelButtonReader_SWS_PushButtonStatus_Up_ButtonStatus());
    }
    SteeringWheelButtonReader_Run();
-   CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetData_SteeringWheelButtonReader_SWS_PushButtonStatus_Back_ButtonStatus());
-   CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetData_SteeringWheelButtonReader_SWS_PushButtonStatus_Down_ButtonStatus());
-   CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetData_SteeringWheelButtonReader_SWS_PushButtonStatus_Enter_ButtonStatus());
-   CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetData_SteeringWheelButtonReader_SWS_PushButtonStatus_Home_ButtonStatus());
-   CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetData_SteeringWheelButtonReader_SWS_PushButtonStatus_Left_ButtonStatus());
-   CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetData_SteeringWheelButtonReader_SWS_PushButtonStatus_Right_ButtonStatus());
-   CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetData_SteeringWheelButtonReader_SWS_PushButtonStatus_Up_ButtonStatus());
+   CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetWriteData_SteeringWheelButtonReader_SWS_PushButtonStatus_Back_ButtonStatus());
+   CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetWriteData_SteeringWheelButtonReader_SWS_PushButtonStatus_Down_ButtonStatus());
+   CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetWriteData_SteeringWheelButtonReader_SWS_PushButtonStatus_Enter_ButtonStatus());
+   CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetWriteData_SteeringWheelButtonReader_SWS_PushButtonStatus_Home_ButtonStatus());
+   CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetWriteData_SteeringWheelButtonReader_SWS_PushButtonStatus_Left_ButtonStatus());
+   CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetWriteData_SteeringWheelButtonReader_SWS_PushButtonStatus_Right_ButtonStatus());
+   CuAssertUIntEquals(tc, ButtonStatus_Released, Rte_GetWriteData_SteeringWheelButtonReader_SWS_PushButtonStatus_Up_ButtonStatus());
 }
 
 

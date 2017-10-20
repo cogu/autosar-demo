@@ -42,6 +42,6 @@ class BspService(autosar.Template):
 
 if __name__ == '__main__':
    ws = autosar.workspace()
-   ws.apply(BspService)   
+   ws.apply(BspService)
    ws.saveXML('BspService.arxml')
    print("Done")

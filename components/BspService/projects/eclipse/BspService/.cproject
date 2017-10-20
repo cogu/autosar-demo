@@ -44,7 +44,7 @@
 									<listOptionValue builtIn="false" value="../../../../../../c-apx/msocket/inc"/>
 									<listOptionValue builtIn="false" value="../../../../../../c-apx/remotefile/inc"/>
 									<listOptionValue builtIn="false" value="../../../../../../c-apx/util/inc"/>
-									<listOptionValue builtIn="false" value="../../../../source/apx_proxy"/>
+									<listOptionValue builtIn="false" value="../../../../inc/apx_proxy"/>
 								</option>
 								<option id="gnu.c.compiler.option.preprocessor.def.symbols.99829686" name="Defined symbols (-D)" superClass="gnu.c.compiler.option.preprocessor.def.symbols" valueType="definedSymbols">
 									<listOptionValue builtIn="false" value="UNIT_TEST"/>
