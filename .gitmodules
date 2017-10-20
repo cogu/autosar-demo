@@ -1,3 +1,6 @@
 [submodule "c-apx"]
 	path = c-apx
 	url = https://github.com/cogu/c-apx.git
+[submodule "amber"]
+	path = amber
+	url = https://github.com/cogu/amber.git
