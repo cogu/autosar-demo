@@ -2,10 +2,10 @@
 import sys, os
 import time
 sys.path.insert(0,'../../lib')
-sys.path.append('../../')
+sys.path.append('../..')
 import components
 import autosar
-from SteeringWheelButtonFeedback import SteeringWheelButtonFeedback
+from template.components.SteeringWheelButtonFeedback import SteeringWheelButtonFeedback
 
 if __name__ == '__main__':
    start=time.time()

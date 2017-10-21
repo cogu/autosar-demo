@@ -1,9 +1,6 @@
 import sys
-sys.path.append('../common')
 import autosar
-import PortInterfaces
-import Services
-import Modes
+from template import PortInterfaces, Services, Modes
 
 class BspService(autosar.Template):
    @classmethod

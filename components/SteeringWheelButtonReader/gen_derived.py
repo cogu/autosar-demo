@@ -2,10 +2,9 @@
 import sys, os
 import time
 sys.path.insert(0,'../../lib')
-for swc in ['BspService', 'common', 'FreeRunningTimer', 'SteeringWheelButtonFeedback']:
-   sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '../'+swc)))
+sys.path.append('../..')
 import autosar
-from SteeringWheelButtonReader import SteeringWheelButtonReader
+from template.components.SteeringWheelButtonReader import SteeringWheelButtonReader
 
 if __name__ == '__main__':
    start=time.time()

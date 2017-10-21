@@ -1,0 +1,16 @@
+Traceback (most recent call last):
+  File "C:\Users\cogu\repo\autosar-demo\components\gen_partition.py", line 79, in <module>
+    rteTaskGenerator.generate(derived_dir)
+  File "../lib\autosar\rte\generator.py", line 711, in generate
+    self._generate_source(dest_dir)
+  File "../lib\autosar\rte\generator.py", line 721, in _generate_source
+    s4 = self._write_source_global_funcs()
+  File "../lib\autosar\rte\generator.py", line 754, in _write_source_global_funcs
+    code.append(self._generate_task_body(task))
+  File "../lib\autosar\rte\generator.py", line 778, in _generate_task_body
+    if_block.extend(self._generate_event_mask_triggers(task))
+  File "../lib\autosar\rte\generator.py", line 801, in _generate_event_mask_triggers
+    self._generate_runnable_calls(code, matching_runnables)
+  File "../lib\autosar\rte\generator.py", line 836, in _generate_runnable_calls
+    raise NotImplementedError('multiple events')
+NotImplementedError: multiple events

@@ -1,6 +1,6 @@
 import sys
 import autosar
-from TemplateFactory import createEnumerationDataTypeTemplate
+from template.factory import createEnumerationDataTypeTemplate
 
 
 #### Enumeration Data Types ####
@@ -43,6 +43,22 @@ class Percent_T(autosar.Template):
    invalidRangeStart=251
    errorRangeStart=254
    notAvailableRangeStart=255
+   @classmethod
+   def apply(cls, ws):
+      package = ws.getDataTypePackage()
+      if package.find(cls.__name__) is None:
+         package.createIntegerDataType(cls.__name__, min=cls.minValue, max=cls.maxValue, offset=cls.offset, scaling=cls.scaling, unit=cls.unit)
+
+
+class MilliSeconds16_T(autosar.Template):
+   minValue=0
+   maxValue=65535
+   offset=0
+   scaling=1
+   unit='ms'
+   invalidRangeStart=None
+   errorRangeStart=65024
+   notAvailableRangeStart=65280
    @classmethod
    def apply(cls, ws):
       package = ws.getDataTypePackage()

@@ -2,10 +2,7 @@ import sys
 if __name__ == '__main__':
    sys.path.append('../common')
 import autosar
-import PortInterfaces
-import Signals
-import Services
-import Modes
+from template import PortInterfaces, Signals, Services, Modes
 
 class SteeringWheelButtonReader(autosar.Template):
    @classmethod

@@ -1,8 +1,7 @@
 import sys
 import autosar
-import PortInterfaces
-import Constants
-from TemplateFactory import createSenderReceiverPortTemplate
+from template import PortInterfaces, Constants
+from template.factory import createSenderReceiverPortTemplate
 
 SystemTime = createSenderReceiverPortTemplate('SystemTime', PortInterfaces.SystemTime_I, Constants.SystemTime_IV)
 SystemDate = createSenderReceiverPortTemplate('SystemDate', PortInterfaces.SystemDate_I, Constants.SystemDate_IV)

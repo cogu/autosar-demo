@@ -1,7 +1,7 @@
 import sys
 import autosar
-import DataTypes
-from TemplateFactory import createConstantTemplateFromEnumerationType, createConstantTemplateFromPhysicalType
+from template import DataTypes
+from template.factory import createConstantTemplateFromEnumerationType, createConstantTemplateFromPhysicalType
 
 
 #### Enumeration Constants ####

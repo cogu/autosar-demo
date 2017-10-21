@@ -1,8 +1,7 @@
 import sys
-sys.path.insert(0,'..')
 import autosar
-import DataTypes
-from TemplateFactory import createSenderReceiverInterfaceTemplate
+from template import DataTypes
+from template.factory import createSenderReceiverInterfaceTemplate
 
 #### Sender Receiver Port Interfaces ####
 ButtonStatus_I = createSenderReceiverInterfaceTemplate('ButtonStatus_I', DataTypes.ButtonStatus_T)

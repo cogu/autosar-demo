@@ -1,5 +1,4 @@
 import sys
-sys.path.insert(0,'..')
 import autosar
 
 #DataTypes
@@ -66,13 +65,9 @@ def createParameterInterfaceTemplate(name, dataTypeTemplate, softwareAddressMeth
       package = ws.getPortInterfacePackage()
       if package.find(name) is None:
          ws.apply(cls.dataTypeTemplate)
-         dataElement=autosar.DataElement(cls.dataElementName, cls.dataTypeTemplate.__name__, softwareAddressMethodRef=softwareAddressMethodRef, adminData=adminData)
-         package.createParameterInterface(name, dataElement)
+         parameter=autosar.Parameter(cls.dataElementName, cls.dataTypeTemplate.__name__, swAddressMethodRef=softwareAddressMethodRef, adminData=adminData)
+         package.createParameterInterface(name, parameter)
    return type(name, (autosar.Template,), dict(dataTypeTemplate=dataTypeTemplate, apply=apply, dataElementName='v'))
-
-   
-   
-
 
 #Ports
 def _createProvidePortHelper(swc, name, portInterfaceTemplate, initValueTemplate=None):

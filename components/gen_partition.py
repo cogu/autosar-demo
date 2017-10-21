@@ -3,13 +3,12 @@ import time
 
 sys.path.insert(0,'../lib')
 sys.path.append('..')
-import components
 import autosar
-from SteeringWheelButtonReader import SteeringWheelButtonReader
-from SteeringWheelButtonFeedback import SteeringWheelButtonFeedback
-from BspService import BspService
-#from RealTimeClock import RealTimeClock
-import Signals
+from template.components.SteeringWheelButtonReader import SteeringWheelButtonReader
+from template.components.SteeringWheelButtonFeedback import SteeringWheelButtonFeedback
+from template.components.BspService import BspService
+from template.components.RealTimeClock import RealTimeClock
+from template import Signals
 import apx
 
 def create_os_config(partition):
@@ -38,7 +37,7 @@ if __name__ == '__main__':
    ws = autosar.workspace()
    ws.apply(SteeringWheelButtonReader)
    ws.apply(SteeringWheelButtonFeedback)
-   #ws.apply(RealTimeClock)
+   ws.apply(RealTimeClock)
    ws.apply(BspService)
    partition = autosar.rte.Partition()
    
